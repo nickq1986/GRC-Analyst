@@ -1,5 +1,8 @@
 # GRC-Analyst
 A fictional GRC case study assessing an AI policy exception request involving patient data at a healthcare SaaS company. It demonstrates evaluating ePHI classification, risk scoring, compliance decisions, and drafting clear stakeholder communication in a regulated environment.
+
+# Scenario
+
 𝐍𝐨𝐫𝐭𝐡𝐰𝐢𝐧𝐝 𝐇𝐞𝐚𝐥𝐭𝐡, a 120-person US healthcare SaaS company that stores patient data (ePHI) for around 400 clinics.
 
 𝐓𝐢𝐜𝐤𝐞𝐭 𝐟𝐫𝐨𝐦 𝐲𝐨𝐮𝐫 𝐦𝐚𝐧𝐚𝐠𝐞𝐫:
@@ -17,7 +20,10 @@ A fictional GRC case study assessing an AI policy exception request involving pa
 - No BAA is available on the free tier
 - An enterprise tier exists at $30 per user per month: it includes a BAA, no training on customer data, SSO, and audit logs
 - The marketing team has four people
+
+
 𝐘𝐨𝐮𝐫 𝐝𝐞𝐥𝐢𝐯𝐞𝐫𝐚𝐛𝐥𝐞𝐬
+
 1. 𝐈𝐬 𝐭𝐡𝐢𝐬 𝐞𝐏𝐇𝐈? Answer yes or no and explain why.
 2. 𝐒𝐜𝐨𝐫𝐞 𝐭𝐡𝐞 𝐫𝐢𝐬𝐤 of approving the request as written, using Likelihood × Impact on a 1-5 scale, with one sentence justifying each number.
 3. 𝐘𝐨𝐮𝐫 𝐝𝐞𝐜𝐢𝐬𝐢𝐨𝐧: approve, deny, or approve with conditions. If conditions, list them.
