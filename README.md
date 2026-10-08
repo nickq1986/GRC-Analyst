@@ -61,5 +61,3 @@ flowchart LR
   class V risk;
   linkStyle 2,3 stroke:#c2413b,stroke-width:3px;
 ```
-
-*Fictional scenario based on the supplied Threat Dragon JSON. The diagram shows the requested ePHI flow reaching the free AI assistant through an unmanaged account that bypasses SSO, and the vendor's potential use of inputs for model training.*
