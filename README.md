@@ -50,7 +50,7 @@ flowchart LR
     end
 
     subgraph EXT ["Current request: third-party free tier"]
-        AI["AI Writing Assistant<br/>Free tier; no SSO or BAA<br/>Prompt includes: patient name,<br/>appointment type, clinic, date"]
+        AI["AI Writing Assistant<br/>Unmanaged free-tier account<br/>(not connected to Northwind SSO)<br/>No BAA<br/>Prompt: patient name, appointment type,<br/>clinic, date"]
         V[("Vendor Data Store<br/>(inputs may improve vendor models)")]
     end
 
