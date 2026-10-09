@@ -53,11 +53,11 @@ flowchart LR
         AI["AI Writing Assistant<br/>(Free Tier)"]
         V[("Vendor Data Store<br/>(Model Training Set)")]
 
-        AI ==>|"Data Retained & Used for Training"| V
+        AI == "Data Retained & Used for Training" ==> V
     end
 
     %% High-Risk External Egress Flow
-    M ==>|"ePHI Payload: First Name, Date, Clinic, Type<br/>⚠️ Policy Breach & Unmanaged Account (No SSO)"| AI
+    M == "ePHI Payload: First Name, Date, Clinic, Type<br/>⚠️ Policy Breach & Unmanaged Account (No SSO)" ==> AI
 
     %% Styling & Theme Classes
     classDef boundary fill:#f0f4f9,stroke:#3b82f6,stroke-width:2px,color:#0f172a;
