@@ -16,22 +16,3 @@ _Converted from the workbook tabs._
 | A008 | Enterprise AI tier | Information | Third-party vendor | Would process customer data under the stated enterprise terms | Yes | Yes | Yes | Yes |
 | A009 | Message Deliver Platform | Software / SaaS | Clinic/healthcare provider: | Personalized appointment reminders contain ePHI | Yes | No | No | Yes |
 | A010 | Patient delivery destinations | Human /Software/Hardware | Not Specified | Receive clinic messages | Yes | No | No | Unknown |
-
-## Classification Table
-
-| Classification | Highly Confidential | Confidential | Internal Use Only | Public |
-| --- | --- | --- | --- | --- |
-| Labeling | Must be labeled as Highly Confidential on all pages | Must be labeled as Confidential on all relevant pages | For Internal Use Only label on internal documents | No special labeling required |
-| Storage | Stored in secure locations with restricted access | Stored in locked cabinets or password-protected files | Stored in regular cabinets or shared directories | No special storage requirements |
-| Transmission | Encrypted transmission required via secure channels | Password protection required when sharing | Can be transmitted within the organization without encryption | Can be shared freely via email or other channels |
-| Access Control | Access limited to senior management or specific roles | Access limited to authorized employees | Accessible to all employees | Accessible by the public |
-| Disposal | Must be shredded or securely deleted | Must be deleted securely or physically destroyed | Can be discarded in regular waste after review | No special disposal requirements |
-| Backup | Encrypted backups required | Regular encrypted backups | Regular backups stored with basic protection | No special backup requirements |
-
-## Value table
-
-| Value (Criticality) | Description |
-| --- | --- |
-| High | Asset is crucial to the organization; loss may cause severe damage |
-| Medium | Asset is important, but the organization can still function without it |
-| Low | Asset has low impact on operations; minimal damage if lost |
