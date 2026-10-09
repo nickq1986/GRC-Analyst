@@ -40,24 +40,37 @@ Path: [GRC]
 
 ```mermaid
 flowchart LR
-    subgraph NW ["Northwind Health Trust Boundary"]
+    subgraph NW ["Northwind Health Trust Boundary<br/>(120 staff; ePHI for ~400 clinics)"]
         DB[("Patient Database<br/>(ePHI Source)")]
         SSO["Identity Provider<br/>(SSO)"]
         M["Marketing Team<br/>(4 Staff)"]
+        RD["Appointment Reminder Delivery<br/>(platform/channel unspecified)"]
 
-        SSO -->|"SSO Authentication"| M
-        DB -->|"Direct ePHI Access"| M
     end
 
-    subgraph EXT ["Third-Party Vendor Environment (Outside Northwind Control)"]
-        AI["AI Writing Assistant<br/>(Free Tier)"]
-        V[("Vendor Data Store<br/>(Model Training Set)")]
-
-        AI == "Data Retained & Used for Training" ==> V
+    subgraph EXT ["Current request: third-party free tier"]
+        AI["AI Writing Assistant<br/>(Free Tier; no SSO or BAA)"]
+        V[("Vendor Data Store<br/>(inputs may improve vendor models)")]
     end
 
-    %% High-Risk External Egress Flow
-    M == "ePHI Payload: First Name, Date, Clinic, Type<br/>⚠️ Policy Breach & Unmanaged Account (No SSO)" ==> AI
+    subgraph ALT ["Potential alternative (not the current request)"]
+        EAI["Enterprise AI Tier<br/>BAA; no training on customer data<br/>SSO; audit logs<br/>$30/user/month<br/>$120/month for 4 staff"]
+    end
+
+    P(("Patient"))
+
+    %% Current proposed workflow and high-risk ePHI egress
+    SSO -->|"SSO authentication"| M
+    DB -->|"Patient and appointment details"| M
+    M == "ePHI prompt: first name, appointment type, clinic, date<br/>Free-tier account; no SSO or BAA" ==> AI
+    AI == "Inputs may be used to improve vendor models" ==> V
+    AI -->|"Personalized reminder draft returned<br/>(may contain ePHI)"| M
+    M -->|"Reminder message sent"| RD
+    RD -->|"Appointment reminder delivered"| P
+
+    %% Safer paid route, only after Security approval
+    M -.->|"Enterprise alternative: after Security approval and BAA"| EAI
+    EAI -.->|"Personalized reminder draft returned"| M
 
     %% Styling & Theme Classes
     classDef boundary fill:#f0f4f9,stroke:#3b82f6,stroke-width:2px,color:#0f172a;
@@ -65,12 +78,18 @@ flowchart LR
     classDef internal fill:#ffffff,stroke:#64748b,stroke-width:1.5px,color:#0f172a;
     classDef external fill:#fff1f2,stroke:#e11d48,stroke-width:2px,color:#0f172a;
     classDef risk fill:#fef2f2,stroke:#dc2626,stroke-width:3px,color:#7f1d1d;
+    classDef optional fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    classDef patient fill:#faf5ff,stroke:#7c3aed,stroke-width:1.5px,color:#2e1065;
 
     class NW boundary;
     class EXT extBoundary;
-    class M,SSO,DB internal;
+    class ALT optional;
+    class M,SSO,DB,RD internal;
     class AI external;
     class V risk;
+    class EAI optional;
+    class P patient;
 
     linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
+    linkStyle 7,8 stroke:#16a34a,stroke-width:2px;
 ```
