@@ -50,11 +50,11 @@ flowchart LR
     end
 
     subgraph EXT ["Current request: third-party free tier"]
-        AI["AI Writing Assistant<br/>(Free Tier; no SSO or BAA)"]
+        AI["AI Writing Assistant<br/>Free tier; no SSO or BAA<br/>Prompt includes: patient name,<br/>appointment type, clinic, date"]
         V[("Vendor Data Store<br/>(inputs may improve vendor models)")]
     end
 
-    subgraph ALT ["Potential alternative (not the current request)"]
+    subgraph ALT ["Available enterprise option (not the current request)"]
         EAI["Enterprise AI Tier<br/>BAA; no training on customer data<br/>SSO; audit logs<br/>$30/user/month<br/>$120/month for 4 staff"]
     end
 
@@ -63,15 +63,10 @@ flowchart LR
     %% Current proposed workflow and high-risk ePHI egress
     SSO -->|"SSO authentication"| M
     DB -->|"Patient and appointment details"| M
-    M == "ePHI prompt: first name, appointment type, clinic, date<br/>Free-tier account; no SSO or BAA" ==> AI
+    M <-->|"ePHI prompt sent; personalized reminder draft returned<br/>(may contain ePHI)"| AI
     AI == "Inputs may be used to improve vendor models" ==> V
-    AI -->|"Personalized reminder draft returned<br/>(may contain ePHI)"| M
     M -->|"Reminder message sent"| RD
     RD -->|"Appointment reminder delivered"| P
-
-    %% Safer paid route, only after Security approval
-    M -.->|"Enterprise alternative: after Security approval and BAA"| EAI
-    EAI -.->|"Personalized reminder draft returned"| M
 
     %% Styling & Theme Classes
     classDef boundary fill:#f0f4f9,stroke:#3b82f6,stroke-width:2px,color:#0f172a;
@@ -92,5 +87,4 @@ flowchart LR
     class P patient;
 
     linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
-    linkStyle 7,8 stroke:#16a34a,stroke-width:2px;
 ```
