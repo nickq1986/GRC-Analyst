@@ -37,28 +37,38 @@ Path: [GRC]
 1. [The combination of patient's first name, appointment type, clinic, and date is ePHI. Sections 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers. The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).]
 
 2.[]
-Northwind Change Request Projected Model Flow Diagram **
-
-```mermaid
 flowchart LR
-  subgraph NW["Northwind Health trust boundary"]
-    M["Marketing Team<br/>4 staff"]
-    SSO["Northwind Identity Provider<br/>(SSO)"]
-    DB[("Patient Database<br/>ePHI source")]
-    DB -->|"ePHI access"| M
-    SSO -->|"SSO authentication"| M
-  end
+    subgraph NW ["Northwind Health Trust Boundary"]
+        DB[("Patient Database<br/>(ePHI Source)")]
+        SSO["Identity Provider<br/>(SSO)"]
+        M["Marketing Team<br/>(4 Staff)"]
 
-  AI["AI Writing Assistant<br/>Free tier · outside Northwind control"]
-  V[("Vendor data store<br/>Inputs may train models")]
-  M ==>|"ePHI: first name, appointment date,<br/>clinic, and appointment type<br/>Unmanaged account bypasses SSO"| AI
-  AI ==>|"Data retained / used for model training"| V
+        SSO -->|"SSO Authentication"| M
+        DB -->|"Direct ePHI Access"| M
+    end
 
-  classDef northwind fill:#eef6ff,stroke:#4f7fb2,color:#172033,stroke-width:2px;
-  classDef external fill:#fff5ee,stroke:#d58a4a,color:#172033,stroke-width:2px;
-  classDef risk fill:#fff1f0,stroke:#c2413b,color:#7f1d1d,stroke-width:3px;
-  class M,SSO,DB northwind;
-  class AI external;
-  class V risk;
-  linkStyle 2,3 stroke:#c2413b,stroke-width:3px;
+    subgraph EXT ["Third-Party Vendor Environment (Outside Northwind Control)"]
+        AI["AI Writing Assistant<br/>(Free Tier)"]
+        V[("Vendor Data Store<br/>(Model Training Set)")]
+
+        AI ==>|"Data Retained & Used for Training"| V
+    end
+
+    %% High-Risk External Egress Flow
+    M ==>|"ePHI Payload: First Name, Date, Clinic, Type<br/>⚠️ Policy Breach & Unmanaged Account (No SSO)"| AI
+
+    %% Styling & Theme Classes
+    classDef boundary fill:#f0f4f9,stroke:#3b82f6,stroke-width:2px,color:#0f172a;
+    classDef extBoundary fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#0f172a;
+    classDef internal fill:#ffffff,stroke:#64748b,stroke-width:1.5px,color:#0f172a;
+    classDef external fill:#fff1f2,stroke:#e11d48,stroke-width:2px,color:#0f172a;
+    classDef risk fill:#fef2f2,stroke:#dc2626,stroke-width:3px,color:#7f1d1d;
+
+    class NW boundary;
+    class EXT extBoundary;
+    class M,SSO,DB internal;
+    class AI external;
+    class V risk;
+
+    linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
 ```
