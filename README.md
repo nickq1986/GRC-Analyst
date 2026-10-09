@@ -37,6 +37,9 @@ Path: [GRC]
 1. [The combination of patient's first name, appointment type, clinic, and date is ePHI. Sections 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers. The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).]
 
 2.[]
+
+mermaid
+---
 flowchart LR
     subgraph NW ["Northwind Health Trust Boundary"]
         DB[("Patient Database<br/>(ePHI Source)")]
