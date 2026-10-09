@@ -1,3 +1,9 @@
+
+ISO/IEC 27001 as the requirements your risk process must satisfy
+
+use NIST SP 800-30 to help define impact levels- healthcare scenario, add the NIST Privacy Framework
+
+
 Establish Risk Criteria: Define risk acceptance criteria and baseline conditions for conducting risk assessments.
 
 Ensure Consistency: Design the assessment process to yield consistent, valid, and comparable results over repeated executions.
