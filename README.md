@@ -132,7 +132,8 @@ flowchart LR
 
 ]
 
-3. [# Approve with Conditions 
+3. [
+4. # Approve with Conditions 
 
 ## Condition 1: Mitigate R-001 and R-002 ##
 
