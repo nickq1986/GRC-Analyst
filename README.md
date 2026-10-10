@@ -99,25 +99,66 @@ flowchart LR
 **Justification**
 
 **R-002** – Risk of patients being identified because outside AI vendors keep and use patient data to train their systems.
+
 **Rating** 16/25
+
 **Justification**
 
 **R-003** – Risk of patient data lingering indefinitely or being accessed improperly due to weak storage and deletion controls in AI software.
+
 **Rating** 16/25
+
 **Justification**
 
 **R-004** – Risk of unauthorized access and former employees keeping system access because AI accounts do not use company login controls (SSO).
+
 **Rating** 12/25 Medium/High
+
 **Justification** Personal logins mean IT cannot enforce strong password policies. When employees leave the company, their access cannot be automatically blocked, creating a back-door security risk.
 
 **R-005** – Risk of patient medical details reaching the wrong person due to outdated, shared, or unverified contact information.
+
 **Rating** 9/25 Medium
+
 **Justification** Sending messages to shared family phones or outdated numbers accidentally exposes private medical appointments to unintended recipients, leading to privacy complaints.
 
 **R-006** –  Risk of privacy breaches and legal penalties because messaging tools lack required vendor contracts (BAAs) and security controls.
+
 **Score** 8/25 Medium
+
 **Justification** Using messaging software without a signed healthcare contract (BAA) violates federal privacy laws (HIPAA), exposing the organization to legal fines during audits.
 
 ]
 
 3. [# Approve with Conditions 
+
+## Condition 1: Mitigate R-001 and R-002 ##
+
+_Controls_: ISO 27001 A.5.10, A.5.20 
+
+Immediately cease all use of free-tier AI tools. Marketing must use an approved enterprise-licensed AI platform with explicit contractual guarantees prohibiting vendor retention or training on organization data.
+
+## Condition 2: Mitigate R-003
+
+_Controls_: ISO 27001 A.8.10
+
+Enable automated data retention policies within the AI software to ensure temporary caches, logs, and stored prompts are purged immediately after processing ().
+
+## Condition 4: Mitigate R-004
+
+_Controls_: ISO 27001 A.5.15, A.5.18
+
+Intercept and route all AI software user authentication through Enterprise Single Sign-On (SSO) with Multi-Factor Authentication (MFA) to ensure central control and automated access revocation upon employee offboarding.
+
+## Condition 5: Mitigate R-005 
+
+_Controls_: ISO 27001 A.8.11
+
+Strip specific medical/treatment details from outbound automated messages (e.g., send generic appointment reminders requiring a secure login to view details) to prevent disclosure via shared or outdated contact numbers.
+
+## Condition 6: Mitigate R-006
+
+_Controls_; ISO 27001 A.8.11
+
+Strip specific medical/treatment details from outbound automated messages (e.g., send generic appointment reminders requiring a secure login to view details) to prevent disclosure via shared or outdated contact numbers .
+
