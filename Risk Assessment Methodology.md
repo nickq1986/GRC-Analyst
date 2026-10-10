@@ -20,28 +20,28 @@ Impact;
 
 ## 2. Risk Formula
 
-Overall risk is calculated using the formular 
+Overall risk is calculated using the formula
 
 Risk = Likeliness x Impact 
 
 
 ```mermaid
 flowchart TB
-    subgraph matrix["Risk Matrix: Likelihood × Impact"]
+    subgraph matrix["Risk Matrix: Likeliness x Impact"]
         direction TB
         subgraph header[" "]
             direction LR
-            h0["Likelihood ↓ / Impact →"]:::axis
-            h1["1"]:::axis
-            h2["2"]:::axis
-            h3["3"]:::axis
-            h4["4"]:::axis
-            h5["5"]:::axis
+            h0["Likeliness ↓ / Impact →"]:::axis
+            h1["1<br/>Negligible"]:::axis
+            h2["2<br/>Low"]:::axis
+            h3["3<br/>Medium"]:::axis
+            h4["4<br/>High"]:::axis
+            h5["5<br/>Critical"]:::axis
             h0 ~~~ h1 ~~~ h2 ~~~ h3 ~~~ h4 ~~~ h5
         end
         subgraph row5[" "]
             direction LR
-            l5["5<br/>Almost certain"]:::axis
+            l5["5<br/>Very High"]:::axis
             r51["5<br/>Moderate"]:::moderate
             r52["10<br/>High"]:::high
             r53["15<br/>High"]:::high
@@ -51,7 +51,7 @@ flowchart TB
         end
         subgraph row4[" "]
             direction LR
-            l4["4<br/>Likely"]:::axis
+            l4["4<br/>High"]:::axis
             r41["4<br/>Low"]:::low
             r42["8<br/>Moderate"]:::moderate
             r43["12<br/>High"]:::high
@@ -81,7 +81,7 @@ flowchart TB
         end
         subgraph row1[" "]
             direction LR
-            l1["1<br/>Rare"]:::axis
+            l1["1<br/>Negligible"]:::axis
             r11["1<br/>Low"]:::low
             r12["2<br/>Low"]:::low
             r13["3<br/>Low"]:::low
