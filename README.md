@@ -95,20 +95,22 @@ flowchart LR
 ## Risk Rating and Justification 
   
 **R-001** – Risk of leaking patient data and breaking privacy laws because Marketing uses free AI tools with real patient details.
+
 **Rating** 25/25 
-**Justification**
+
+**Justification** Free AI tools use public inputs to train their models. Uploading real patient data creates an instant HIPAA breach, regulatory fines, and public exposure.
 
 **R-002** – Risk of patients being identified because outside AI vendors keep and use patient data to train their systems.
 
 **Rating** 16/25
 
-**Justification**
+**Justification** Vendors keeping data for training means patient details are permanently stored outside our control, creating a risk of patients being re-identified.
 
 **R-003** – Risk of patient data lingering indefinitely or being accessed improperly due to weak storage and deletion controls in AI software.
 
 **Rating** 16/25
 
-**Justification**
+**Justification** Without strict auto-delete rules, sensitive data stays in temporary AI storage indefinitely, creating an unmonitored target for data leaks.
 
 **R-004** – Risk of unauthorized access and former employees keeping system access because AI accounts do not use company login controls (SSO).
 
