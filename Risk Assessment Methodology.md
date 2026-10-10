@@ -6,6 +6,82 @@ use NIST SP 800-30 to help define impact levels- healthcare scenario, add the NI
 
 Establish Risk Criteria: Define risk acceptance criteria and baseline conditions for conducting risk assessments.
 
+**Risk score = Likelihood × Impact.** Assess likelihood on a 1–5 scale. Assess impact on a 1–5 scale using LINDDUN privacy threat analysis.
+
+```mermaid
+flowchart TB
+    subgraph matrix["Risk Matrix: Likelihood × Impact"]
+        direction TB
+        subgraph header[" "]
+            direction LR
+            h0["Likelihood ↓ / Impact →"]:::axis
+            h1["1"]:::axis
+            h2["2"]:::axis
+            h3["3"]:::axis
+            h4["4"]:::axis
+            h5["5"]:::axis
+            h0 ~~~ h1 ~~~ h2 ~~~ h3 ~~~ h4 ~~~ h5
+        end
+        subgraph row5[" "]
+            direction LR
+            l5["5<br/>Almost certain"]:::axis
+            r51["5<br/>Moderate"]:::moderate
+            r52["10<br/>High"]:::high
+            r53["15<br/>High"]:::high
+            r54["20<br/>Critical"]:::critical
+            r55["25<br/>Critical"]:::critical
+            l5 ~~~ r51 ~~~ r52 ~~~ r53 ~~~ r54 ~~~ r55
+        end
+        subgraph row4[" "]
+            direction LR
+            l4["4<br/>Likely"]:::axis
+            r41["4<br/>Low"]:::low
+            r42["8<br/>Moderate"]:::moderate
+            r43["12<br/>High"]:::high
+            r44["16<br/>High"]:::high
+            r45["20<br/>Critical"]:::critical
+            l4 ~~~ r41 ~~~ r42 ~~~ r43 ~~~ r44 ~~~ r45
+        end
+        subgraph row3[" "]
+            direction LR
+            l3["3<br/>Possible"]:::axis
+            r31["3<br/>Low"]:::low
+            r32["6<br/>Moderate"]:::moderate
+            r33["9<br/>Moderate"]:::moderate
+            r34["12<br/>High"]:::high
+            r35["15<br/>High"]:::high
+            l3 ~~~ r31 ~~~ r32 ~~~ r33 ~~~ r34 ~~~ r35
+        end
+        subgraph row2[" "]
+            direction LR
+            l2["2<br/>Unlikely"]:::axis
+            r21["2<br/>Low"]:::low
+            r22["4<br/>Low"]:::low
+            r23["6<br/>Moderate"]:::moderate
+            r24["8<br/>Moderate"]:::moderate
+            r25["10<br/>High"]:::high
+            l2 ~~~ r21 ~~~ r22 ~~~ r23 ~~~ r24 ~~~ r25
+        end
+        subgraph row1[" "]
+            direction LR
+            l1["1<br/>Rare"]:::axis
+            r11["1<br/>Low"]:::low
+            r12["2<br/>Low"]:::low
+            r13["3<br/>Low"]:::low
+            r14["4<br/>Low"]:::low
+            r15["5<br/>Moderate"]:::moderate
+            l1 ~~~ r11 ~~~ r12 ~~~ r13 ~~~ r14 ~~~ r15
+        end
+    end
+    header ~~~ row5 ~~~ row4 ~~~ row3 ~~~ row2 ~~~ row1
+
+    classDef axis fill:#e2e8f0,stroke:#475569,color:#0f172a,font-weight:bold;
+    classDef low fill:#dcfce7,stroke:#16a34a,color:#14532d;
+    classDef moderate fill:#fef9c3,stroke:#ca8a04,color:#713f12;
+    classDef high fill:#ffedd5,stroke:#ea580c,color:#7c2d12;
+    classDef critical fill:#fee2e2,stroke:#dc2626,color:#7f1d1d,font-weight:bold;
+```
+
 Ensure Consistency: Design the assessment process to yield consistent, valid, and comparable results over repeated executions.
 
 Identify Risks: Identify risks related to the loss of confidentiality, integrity, and availability within the ISMS scope, and assign risk owners to each.
