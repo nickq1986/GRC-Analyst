@@ -104,9 +104,16 @@ flowchart TB
 * **Medium (6–12):** Risk owner must evaluate; treatment required if simple controls exist.
 * **High / Critical (13–25):** Exceeds risk appetite.
 
+## 4. Baseline Conditions for Assessments
+Risk assessment must be conducted prior granting authorisation to action exception request for Northwind Health AI use policy, under the following baseline condition:
 
+"Prior to major system changes, deployments, or architecture alterations"
 
 # Ensure Consistency: Design the assessment process to yield consistent, valid, and comparable results over repeated executions.
+
+Evidence-Based Rationale & Documentation
+* **Mandatory Justification:** Every assigned Likeliness and Impact score must be accompanied by a documented rationale.
+* **Documented Assumptions:** Any assumptions regarding existing controls, asset boundaries, or operational environments must be explicitly recorded in the Risk Register.
 
 Identify Risks: Identify risks related to the loss of confidentiality, integrity, and availability within the ISMS scope, and assign risk owners to each.
 
