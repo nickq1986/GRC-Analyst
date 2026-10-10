@@ -133,7 +133,7 @@ flowchart LR
 ]
 
 3. [
-4. # Approve with Conditions 
+# Approve with Conditions 
 
 ## Condition 1: Mitigate R-001 and R-002 ##
 
@@ -164,4 +164,27 @@ Strip specific medical/treatment details from outbound automated messages (e.g.,
 _Controls_; ISO 27001 A.8.11
 
 Strip specific medical/treatment details from outbound automated messages (e.g., send generic appointment reminders requiring a secure login to view details) to prevent disclosure via shared or outdated contact numbers .
+
+4.[
+
+Decision: Approved with Conditions
+
+Hi,
+
+We have completed the risk assessment for the proposed AI tools and messaging workflows. Rather than blocking these initiatives, we want to help Marketing move forward quickly and safely.
+
+To protect patient privacy, comply with healthcare regulations, and safeguard company systems, we need to put five practical guardrails in place before rollout:
+
+Switch to Enterprise AI: Free AI tools use real patient data for their own learning. We will set you up on an enterprise-licensed tool where data stays strictly private.
+
+Centralized Logins (SSO): Access will be routed through standard company logins so IT can secure accounts and manage access automatically.
+
+Automatic Data Wiping: We will configure the system to clear temporary data and search histories automatically.
+
+Sign Vendor Contracts: Our legal team must execute required healthcare privacy contracts (BAAs) with all messaging vendors before sending live messages.
+
+Generic Notifications: Message content will be kept general (e.g., "You have a new appointment reminder") to prevent sensitive medical details from showing up on shared household devices.
+
+Our team is ready to partner with you to get these safeguards configured so you can launch securely. Let’s schedule a quick kickoff next week.
+]
 
