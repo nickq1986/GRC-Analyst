@@ -135,30 +135,23 @@ From the register the current vulnerability findings are:
 
 Threats were identified using the  [Northwind LINDDUN threat model](documents/Threat%20Model.md), as follows: 
 
-Marketing’s ePHI prompt to the free-tier AI
-1. Linkability (T01): Repeated prompts could be linked to build a patient profile.
-2. Identifiability (T02): The prompt details could identify the patient.
-3. Disclosure (T03): Identifiable ePHI is sent to the free-tier vendor.
-4. Non-compliance (T04): Processing may conflict with Northwind policy or privacy obligations.
-   
-Vendor storage and model improvement
-6. Linkability (T10): Stored prompts could connect a patient’s appointments over time.
-7. Identifiability (T11): Stored prompts or cached data could retain patient identifiers.
-8. Non-repudiation (T12): Retained records could provide evidence of a patient’s appointment.
-9. Detectability (T13): Vendor data or model behavior could reveal that patient data was included.
-10. Disclosure (T14): Cached or retained ePHI could be exposed.
-    
-Reminder delivery and receipt
-12. Linkability (T05): Repeated reminders could reveal a patient’s care pattern.
-13. Identifiability (T06): Reminder content or records could identify the patient and care context.
-14. Non-repudiation (T07): Delivery records could evidence a care relationship.
-15. Detectability (T08): A notification could reveal clinic involvement.
-16. Disclosure (T09): A shared or incorrect destination could receive ePHI.
-Patient awareness and delivery platform
-
-17. Unawareness (T15): Patients may not know a vendor processes reminder data; notice status needs checking.
-18. Disclosure (T16): The reminder platform’s ePHI safeguards are not established in the register.
-19. Non-compliance (T17): Whether a BAA is required for the reminder platform remains unresolved.
+1. T01 — Linkability: Repeated ePHI prompts may be linked into a patient profile.
+2. T02 — Identifiability: Prompt details may identify the patient.
+3. T03 — Disclosure: Identifiable ePHI is disclosed to the free-tier AI vendor.
+4. T04 — Non-compliance: Free-tier processing may conflict with policy or privacy obligations.
+5. T05 — Linkability: Repeated reminders or metadata may reveal a patient’s care pattern.
+6. T06 — Identifiability: Reminder content or records may identify the patient and care context.
+7. T07 — Non-repudiation: Delivery records may evidence a patient’s care relationship.
+8. T08 — Detectability: A notification may reveal clinic involvement.
+9. T09 — Disclosure: A shared or incorrect destination may receive ePHI.
+10. T10 — Linkability: Training data may link prompts across appointments.
+11. T11 — Identifiability: Stored prompts or cached data may retain patient identifiers.
+12. T12 — Non-repudiation: Retained prompts or records may evidence an appointment.
+13. T13 — Detectability: Vendor data or model behavior may reveal that patient data was included.
+14. T14 — Disclosure: Cached or retained ePHI may be exposed from vendor storage.
+15. T15 — Unawareness: Patients may not know a vendor processes reminder data; notice status needs checking.
+16. T16 — Disclosure: The reminder platform’s ePHI safeguards are not established.
+17. T17 — Non-compliance: Whether a BAA is required for the reminder platform is unresolved.
 
 
 ## Risk Identification Methodology
