@@ -167,11 +167,7 @@ The risk identification process follows the standard security formulation:
 
 Risk = (Vulnerability + Threats)
 
-The plus sign represents combining risk factors; it is not a numerical calculation. Once a vulnerability has been recorded against an asset, identify the threat or threats that could exploit or activate it. For privacy risks involving ePHI, LINDDUN provides the threat categories used in this assessment. A vulnerability can map to several threats, and the same threat can apply to more than one vulnerability.
 
-For each vulnerability, document the mapped threat IDs and their descriptions, write one overall risk statement that combines the vulnerability, plausible threat scenario, and potential consequence, then assign a unique Risk-ID (R-001, R-002, and so on). The mapping table records these links so each risk can be traced back to its asset and source vulnerability.
-
-Where safeguards or applicability are unknown, describe the risk conditionally and record the point for validation rather than treating it as a confirmed control failure. This is the risk identification stage: likelihood and impact are assessed later using the established likelihood × impact criteria, with a rationale for each score.
 
 The vulnerability-to-threat mapping table is in the [Risk Identification Methodology document](documents/Risk%20Identification%20Methodology.md).
 
