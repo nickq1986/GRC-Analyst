@@ -2,7 +2,7 @@
 
 ## Vulnerability-to-threat mapping
 
-| Vulnerability | Mapped LINDDUN threats | Threat descriptions | Overall risk statement |
+| Vulnerability | Mapped LINDDUN threats | Threat descriptions | Risk statement |
 | --- | --- | --- | --- |
 | **A005 — Free-tier AI writing assistant** | T01 Linkability; T02 Identifiability; T03 Disclosure; T04 Non-compliance | **T01:** Repeated prompts may be linked into a patient profile.<br>**T02:** Prompt attributes may identify the patient.<br>**T03:** Identifiable ePHI is disclosed to the free-tier vendor.<br>**T04:** Processing may conflict with policy or privacy obligations. | If Marketing uses the free tier with identifiable appointment data, ePHI could be disclosed to the vendor and retained or used for model improvement without Northwind’s approved safeguards, potentially exposing patient-care relationships and causing policy or privacy non-compliance. |
 | **A006 — AI data improvement process** | T01 Linkability; T10 Linkability; T11 Identifiability; T12 Non-repudiation; T13 Detectability; T14 Disclosure | **T01:** Repeated prompts may be linked into a patient profile.<br>**T10:** Training data may link prompts across appointments.<br>**T11:** Stored prompts may retain patient identifiers.<br>**T12:** Retained prompts may evidence an appointment.<br>**T13:** Vendor data or model behavior may reveal patient-data inclusion.<br>**T14:** Retained ePHI may be exposed from vendor storage. | If the vendor retains ePHI for model improvement, data from multiple appointments could be linked or inferred in vendor-controlled storage or models, increasing the chance of identifying patients or exposing their care information outside Northwind’s control. |
