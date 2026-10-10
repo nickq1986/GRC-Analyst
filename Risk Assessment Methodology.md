@@ -167,9 +167,13 @@ The risk identification process follows the standard security formulation:
 
 Risk = (Vulnerability + Threats)
 
+The vulnerability-to-threat mapping table is in the [Risk Identification Methodology document](documents/Risk%20Identification%20Methodology.md). For each vulnerability, the table links the relevant threat IDs, describes those threats, and gives one overall risk statement combining the vulnerability. The Overall risk statements were assigned to a Risk-Id as follows: 
 
-
-The vulnerability-to-threat mapping table is in the [Risk Identification Methodology document](documents/Risk%20Identification%20Methodology.md).
+- R-001 — Free-tier AI writing assistant: If Marketing uses the free tier with identifiable appointment data, ePHI could be disclosed to the vendor and retained or used for model improvement without Northwind’s approved safeguards, potentially exposing patient-care relationships and causing policy or privacy non-compliance.
+- R-002 — AI data improvement process: If the vendor retains ePHI for model improvement, data from multiple appointments could be linked or inferred in vendor-controlled storage or models, increasing the chance of identifying patients or exposing their care information outside Northwind’s control.
+- R-003 — AI database software/cache: If cached ePHI lacks effective access, protection, retention, or deletion safeguards, identifiers and appointment details could persist and be exposed. The register does not establish whether these safeguards are absent, so this risk requires validation.
+- R-004 — Message delivery platform: If the delivery platform lacks appropriate safeguards, or a required BAA is absent, reminder content, metadata, or delivery records could reveal patient-care information to others and create privacy or contractual non-compliance. The platform’s role and BAA applicability need confirmation.
+- R-005 — Patient delivery destinations: If a destination is shared, outdated, or incorrect, or a notification is visible to others, reminders or delivery metadata could reveal a patient’s identity and care relationship to an unintended recipient. Destination ownership and safeguards are unspecified.
 
 
 
