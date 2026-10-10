@@ -1,12 +1,29 @@
+# Establish Risk Criteria: Define risk acceptance criteria and baseline conditions for conducting risk assessments.
 
-ISO/IEC 27001 as the requirements your risk process must satisfy
+## 1. Risk assessment parameters 
 
-use NIST SP 800-30 to help define impact levels- healthcare scenario, add the NIST Privacy Framework
+Likeliness:
 
+1 = Negligible, unlikely to happen unless under exceptional circumstances. 
+2 = Unlikely, not expected to happen frequently 
+3 = Possible, may occur at some point 
+4 = High, expected to occur in most circumstances. 
+5 = Very High, Almost certain. Continuous or frequent occurrence.
 
-Establish Risk Criteria: Define risk acceptance criteria and baseline conditions for conducting risk assessments.
+Impact; 
 
-**Risk score = Likelihood × Impact.** Assess likelihood on a 1–5 scale. Assess impact on a 1–5 scale using LINDDUN privacy threat analysis.
+1 = Negligible, minimal operational disruption; minor localized impact requiring basic remediation.   
+2 = Low, slight disruption; minor financial loss, minimal data exposure, or brief operational delays.  
+3 = Medium, moderate operational disruption; customer dissatisfaction, noticeable financial impact, or minor contractual non-compliance.  
+4 = High, significant disruption; legal or regulatory non-compliance, severe financial loss, or major brand/reputational damage.   
+5 = Critical, existential impact; severe operational shutdown, substantial regulatory fines, loss of critical IP, or catastrophic financial damage.   
+
+## 2. Risk Formula
+
+Overall risk is calculated using the formular 
+
+Risk = Likeliness x Impact 
+
 
 ```mermaid
 flowchart TB
@@ -81,6 +98,22 @@ flowchart TB
     classDef high fill:#ffedd5,stroke:#ea580c,color:#7c2d12;
     classDef critical fill:#fee2e2,stroke:#dc2626,color:#7f1d1d,font-weight:bold;
 ```
+
+
+
+
+
+# Ensure Consistency: Design the assessment process to yield consistent, valid, and comparable results over repeated executions.
+
+Identify Risks: Identify risks related to the loss of confidentiality, integrity, and availability within the ISMS scope, and assign risk owners to each.
+
+Analyze Risks: Assess potential consequences, evaluate the realistic likelihood of occurrence, and determine overall risk levels.
+
+Evaluate & Prioritize Risks: Compare analyzed risks against established risk criteria and prioritize them for risk treatment.
+
+Document the Process: Retain documented information covering the entire risk assessment workflow.
+
+
 
 Ensure Consistency: Design the assessment process to yield consistent, valid, and comparable results over repeated executions.
 
