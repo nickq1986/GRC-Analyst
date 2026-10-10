@@ -99,7 +99,10 @@ flowchart TB
     classDef critical fill:#fee2e2,stroke:#dc2626,color:#7f1d1d,font-weight:bold;
 ```
 
-
+## 3. Risk Acceptance Criteria
+* **Low (1–5):** Risk is within appetite. Acceptable; no mandatory remediation needed.
+* **Medium (6–12):** Risk owner must evaluate; treatment required if simple controls exist.
+* **High / Critical (13–25):** Exceeds risk appetite.
 
 
 
