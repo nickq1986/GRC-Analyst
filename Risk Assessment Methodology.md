@@ -115,7 +115,7 @@ Evidence-Based Rationale & Documentation
 * **Mandatory Justification:** Every assigned Likeliness and Impact score must be accompanied by a documented rationale.
 * **Documented Assumptions:** Any assumptions regarding existing controls, asset boundaries, or operational environments must be explicitly recorded in the Risk Register.
 
-# Identify Risks: Identify risks related to the loss of confidentiality, integrity, and availability within the ISMS scope, and assign risk owners to each.
+# Identify Risks: Identify risks related to the loss of security within the ISMS scope, and assign risk owners to each.
 
 ## 1. Asset Inventory
 
@@ -129,6 +129,8 @@ From the register the current vulnerability findings are:
 - A007 — AI database software: It caches ePHI, but the register doesn’t state the cache’s access, protection, retention or deletion controls. Record this as needs validation, not a confirmed vulnerability.
 - A009 — Message delivery platform: It processes ePHI, but the register says no BAA is required. Validate the platform’s role and whether that status is correct before calling it a vulnerability.
 - A010 — Patient delivery destinations: The owner and safeguards are unspecified. That’s an information gap to investigate; unknown SSO alone doesn’t establish a vulnerability for patient destinations.
+
+## 3. Threat Modelling 
 
 
 
