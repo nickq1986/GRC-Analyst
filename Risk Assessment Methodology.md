@@ -169,14 +169,15 @@ The vulnerability-to-threat mapping table is in the [Risk Identification Methodo
 - R-005 — Patient delivery destinations: If a destination is shared, outdated, or incorrect, or a notification is visible to others, reminders or delivery metadata could reveal a patient’s identity and care relationship to an unintended recipient. Destination ownership and safeguards are unspecified.
 
 # Risk Analysis 
-These were documented in the Risk Register to  Assess potential consequences, evaluate the realistic likelihood of occurrence, and determine overall risk levels.
+
+The Risk-ID's and Risk Statements were documented in the Risk Register to  Assess potential consequences, evaluate the realistic likelihood of occurrence, and determine overall risk levels.
 
 
 
 
 
 
-Analyze Risks: Assess potential consequences, evaluate the realistic likelihood of occurrence, and determine overall risk levels.
+
 
 Evaluate & Prioritize Risks: Compare analyzed risks against established risk criteria and prioritize them for risk treatment.
 
