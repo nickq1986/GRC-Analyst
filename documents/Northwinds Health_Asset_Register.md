@@ -10,7 +10,7 @@ _Converted from the workbook tabs._
 | A002 | Patient Database Software | Software/SaaS | Chief Information Officer (CIO) | Database engine contintuity the system is patched, secure, stable, and properly licensed. | Yes | No | No | Yes |
 | A003 | On-Premises Identity Provider ( SSO) | Software/SaaS | Head of Infrastructure | Automates single-point user authentication, enforces MFA/access policies | No | Yes | Yes | yes |
 | A004 | Marketing Team | Human | Chief Marketing Officer | Public Outreach | Yes | No | No | NA |
-| A005 | Enterprise AI tier | Software / SaaS | Third-party vendor | Prompt includes patient name, appointment type, clinic, and date; restricted ePHI | Yes | Yes | No | No |
+| A005 | Free-tier AI writing assistant | Software / SaaS | Third-party vendor | Prompt includes patient name, appointment type, clinic, and date; restricted ePHI | Yes | Yes | No | No |
 | A006 | AI Database/Improvemet Process | Information | Third-party vendor | Inputs containing ePHI may be stored and used to train and improve vendor models | Yes | Yes | No | NA |
 | A007 | AI Database Software | Sofware/SaaS | Third-party vendor | Ephemeral session caching ,processing to deliver API responses | Yes | Yes | No | NA |
 | A008 | Enterprise AI tier | Information | Third-party vendor | Would process customer data under the stated enterprise terms | Yes | Yes | Yes | Yes |
