@@ -167,15 +167,7 @@ The risk identification process follows the standard security formulation:
 
 Risk = (Vulnerability + Threat)
 
-### Vulnerability-to-threat mapping
-
-| Vulnerability | Mapped LINDDUN threats | Description |
-| --- | --- | --- |
-| **A005 — Free-tier AI writing assistant** | T01 Linkability; T02 Identifiability; T03 Disclosure; T04 Non-compliance | **T01:** Repeated prompts may be linked into a patient profile.<br>**T02:** Prompt attributes may identify the patient.<br>**T03:** Identifiable ePHI is disclosed to the free-tier vendor.<br>**T04:** Processing may conflict with policy or privacy obligations. |
-| **A006 — AI data improvement process** | T01 Linkability; T10 Linkability; T11 Identifiability; T12 Non-repudiation; T13 Detectability; T14 Disclosure | **T01:** Repeated prompts may be linked into a patient profile.<br>**T10:** Training data may link prompts across appointments.<br>**T11:** Stored prompts may retain patient identifiers.<br>**T12:** Retained prompts may evidence an appointment.<br>**T13:** Vendor data or model behavior may reveal patient-data inclusion.<br>**T14:** Retained ePHI may be exposed from vendor storage. |
-| **A007 — AI database software/cache** | T11 Identifiability; T12 Non-repudiation; T14 Disclosure | **T11:** Cached prompts may retain patient identifiers.<br>**T12:** Retained cache or session records may evidence an appointment.<br>**T14:** Cached ePHI may be exposed if safeguards are inadequate. |
-| **A009 — Message delivery platform** | T05 Linkability; T06 Identifiability; T07 Non-repudiation; T09 Disclosure; T16 Disclosure; T17 Non-compliance | **T05:** Repeated reminders or metadata may reveal a care pattern.<br>**T06:** Reminder content or records may identify the patient and care context.<br>**T07:** Delivery records may evidence a care relationship.<br>**T09:** ePHI may reach a shared or incorrect destination.<br>**T16:** The platform’s ePHI safeguards are not established.<br>**T17:** Whether a BAA is required remains unresolved. |
-| **A010 — Patient delivery destinations** | T05 Linkability; T06 Identifiability; T07 Non-repudiation; T08 Detectability; T09 Disclosure | **T05:** Repeated reminders may reveal a care pattern.<br>**T06:** Reminder content may identify the patient and care context.<br>**T07:** Delivery records may evidence a care relationship.<br>**T08:** A notification may reveal clinic involvement.<br>**T09:** A shared or incorrect destination may receive ePHI. |
+The vulnerability-to-threat mapping table is in the [Risk Identification Methodology document](documents/Risk%20Identification%20Methodology.md).
 
 
 
