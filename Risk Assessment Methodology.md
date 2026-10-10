@@ -115,7 +115,17 @@ Evidence-Based Rationale & Documentation
 * **Mandatory Justification:** Every assigned Likeliness and Impact score must be accompanied by a documented rationale.
 * **Documented Assumptions:** Any assumptions regarding existing controls, asset boundaries, or operational environments must be explicitly recorded in the Risk Register.
 
-Identify Risks: Identify risks related to the loss of confidentiality, integrity, and availability within the ISMS scope, and assign risk owners to each.
+# Identify Risks: Identify risks related to the loss of confidentiality, integrity, and availability within the ISMS scope, and assign risk owners to each.
+
+
+
+
+
+
+
+
+
+
 
 Analyze Risks: Assess potential consequences, evaluate the realistic likelihood of occurrence, and determine overall risk levels.
 
