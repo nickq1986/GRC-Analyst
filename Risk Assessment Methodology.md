@@ -117,8 +117,8 @@ Evidence-Based Rationale & Documentation
 
 # Identify Risks: Identify risks related to the loss of confidentiality, integrity, and availability within the ISMS scope, and assign risk owners to each.
 
-
-
+## 1. Asset Inventor 
+Asset inventory Models of the future free tier Ai system that is designed to deliver automated reminders to patients containing ePHI. The Asset inventory can be found here
 
 
 
