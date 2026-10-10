@@ -34,6 +34,8 @@ A fictional GRC case study assessing an AI policy exception request involving pa
  
 Path: [GRC]
 
+## Deliverable 1 Determination of ePHI 
+
 1. [The combination of patient's first name, appointment type, clinic, and date is ePHI. Sections 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers. The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).]
 
   
@@ -89,16 +91,31 @@ flowchart LR
     linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
 ```
 2. [
+
+## Risk Rating and Justification 
   
+**R-001** – Risk of leaking patient data and breaking privacy laws because Marketing uses free AI tools with real patient details.
+**Rating** 25/25 
+**Justification**
 
-R-001- Free-tier AI writing assistant: If Marketing uses the free tier with identifiable appointment data, ePHI could be disclosed to the vendor and retained or used for model improvement without Northwind’s approved safeguards, potentially exposing patient-care relationships and causing policy or privacy non-compliance.
+**R-002** – Risk of patients being identified because outside AI vendors keep and use patient data to train their systems.
+**Rating**
+**Justification**
 
-R-002 - AI data improvement process: If the vendor retains ePHI for model improvement, data from multiple appointments could be linked or inferred in vendor-controlled storage or models, increasing the chance of identifying patients or exposing their care information outside Northwind’s control.
+**R-003** – Risk of patient data lingering indefinitely or being accessed improperly due to weak storage and deletion controls in AI software.
+**Ratinf**
+**Justification**
 
-R-003 AI database software/cache: If cached ePHI lacks effective access, protection, retention, or deletion safeguards, identifiers and appointment details could persist and be exposed. 
+**R-004** – Risk of privacy breaches and legal penalties because messaging tools lack required vendor contracts (BAAs) and security controls.
+**Rating**
+**Justification**
 
-R-004 Message delivery platform: If the delivery platform lacks appropriate safeguards, or a required BAA is absent, reminder content, metadata, or delivery records could reveal patient-care information to others and create privacy or contractual non-compliance. The platform’s role and BAA applicability need confirmation.
+**R-005** – Risk of patient medical details reaching the wrong person due to outdated, shared, or unverified contact information.
+**Rating**
+**Justification**
 
-R-005- Patient delivery destinations: If a destination is shared, outdated, or incorrect, or a notification is visible to others, reminders or delivery metadata could reveal a patient’s identity and care relationship to an unintended recipient. Destination ownership and safeguards are unspecified.
+**R-006** – Risk of unauthorized access and former employees keeping system access because AI accounts do not use company login controls (SSO).
+**Score**
+**Justification**
 
 ]
