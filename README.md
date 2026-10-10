@@ -99,23 +99,25 @@ flowchart LR
 **Justification**
 
 **R-002** – Risk of patients being identified because outside AI vendors keep and use patient data to train their systems.
-**Rating**
+**Rating** 16/25
 **Justification**
 
 **R-003** – Risk of patient data lingering indefinitely or being accessed improperly due to weak storage and deletion controls in AI software.
-**Ratinf**
+**Rating** 16/25
 **Justification**
 
-**R-004** – Risk of privacy breaches and legal penalties because messaging tools lack required vendor contracts (BAAs) and security controls.
-**Rating**
-**Justification**
+**R-004** – Risk of unauthorized access and former employees keeping system access because AI accounts do not use company login controls (SSO).
+**Rating** 12/25 Medium/High
+**Justification** Personal logins mean IT cannot enforce strong password policies. When employees leave the company, their access cannot be automatically blocked, creating a back-door security risk.
 
 **R-005** – Risk of patient medical details reaching the wrong person due to outdated, shared, or unverified contact information.
-**Rating**
-**Justification**
+**Rating** 9/25 Medium
+**Justification** Sending messages to shared family phones or outdated numbers accidentally exposes private medical appointments to unintended recipients, leading to privacy complaints.
 
-**R-006** – Risk of unauthorized access and former employees keeping system access because AI accounts do not use company login controls (SSO).
-**Score**
-**Justification**
+**R-006** –  Risk of privacy breaches and legal penalties because messaging tools lack required vendor contracts (BAAs) and security controls.
+**Score** 8/25 Medium
+**Justification** Using messaging software without a signed healthcare contract (BAA) violates federal privacy laws (HIPAA), exposing the organization to legal fines during audits.
 
 ]
+
+3. [# Approve with Conditions 
