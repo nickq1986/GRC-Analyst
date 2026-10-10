@@ -119,8 +119,16 @@ Evidence-Based Rationale & Documentation
 
 ## 1. Asset Inventory
 
-The Asset register models of the exception requests projected free tier Ai system that is designed to deliver automated reminders to patients containing ePHI. The Asset inventory can be found [here](https://github.com/nickq1986/GRC-Analyst/blob/main/documents/Northwinds%20Health_Asset_Register.md)
+The Asset register models of the exception requests projected free tier Ai system that is designed to deliver automated reminders to patients containing ePHI. The Asset inventory can be found [here](https://github.com/nickq1986/GRC-Analyst/blob/main/documents/Northwinds%20Health_Asset_Register.md) 
 
+## 2. Vulnerability Findind
+From the register the current vulnerability findings are:
+
+- A005 — Free-tier AI writing assistant: Northwind SSO is not used; no BAA is executed; and the free-tier terms allow inputs to be used to improve the vendor’s models.
+- A006 — AI data improvement process: ePHI may be retained and used for model improvement, with no BAA executed.
+- A007 — AI database software: It caches ePHI, but the register doesn’t state the cache’s access, protection, retention or deletion controls. Record this as needs validation, not a confirmed vulnerability.
+- A009 — Message delivery platform: It processes ePHI, but the register says no BAA is required. Validate the platform’s role and whether that status is correct before calling it a vulnerability.
+- A010 — Patient delivery destinations: The owner and safeguards are unspecified. That’s an information gap to investigate; unknown SSO alone doesn’t establish a vulnerability for patient destinations.
 
 
 
@@ -143,12 +151,3 @@ Document the Process: Retain documented information covering the entire risk ass
 
 
 
-Ensure Consistency: Design the assessment process to yield consistent, valid, and comparable results over repeated executions.
-
-Identify Risks: Identify risks related to the loss of confidentiality, integrity, and availability within the ISMS scope, and assign risk owners to each.
-
-Analyze Risks: Assess potential consequences, evaluate the realistic likelihood of occurrence, and determine overall risk levels.
-
-Evaluate & Prioritize Risks: Compare analyzed risks against established risk criteria and prioritize them for risk treatment.
-
-Document the Process: Retain documented information covering the entire risk assessment workflow.
