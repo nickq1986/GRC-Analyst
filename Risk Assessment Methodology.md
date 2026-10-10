@@ -154,7 +154,7 @@ Threats were identified using the  [Northwind LINDDUN threat model](documents/Th
 17. T17 — Non-compliance: Whether a BAA is required for the reminder platform is unresolved.
 
 
-## Risk Identification Methodology
+## Risk Identification 
 
 The risk identification process follows the standard security formulation:
 
@@ -168,8 +168,8 @@ The vulnerability-to-threat mapping table is in the [Risk Identification Methodo
 - R-004 — Message delivery platform: If the delivery platform lacks appropriate safeguards, or a required BAA is absent, reminder content, metadata, or delivery records could reveal patient-care information to others and create privacy or contractual non-compliance. The platform’s role and BAA applicability need confirmation.
 - R-005 — Patient delivery destinations: If a destination is shared, outdated, or incorrect, or a notification is visible to others, reminders or delivery metadata could reveal a patient’s identity and care relationship to an unintended recipient. Destination ownership and safeguards are unspecified.
 
-
-
+# Risk Analysis 
+These were documented in the Risk Register to  Assess potential consequences, evaluate the realistic likelihood of occurrence, and determine overall risk levels.
 
 
 
