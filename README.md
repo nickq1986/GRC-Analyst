@@ -87,9 +87,13 @@ flowchart LR
 
     linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
 ```
-
-
-
-
-
+#Projuct Structure
+|File                    | What it shows                                            |
+-------------------------------------------------------------------------------------
+|01 Scope and Context    |                                                          |
+|02 Methodology          |                                                          | 
+|03 Risk Register        |                                                          |
+|04 Treatment Plan       |                                                          |
+|05 Executive Summary    |                                                          |
+|06 Job Requirements Map |                                                          |
 
