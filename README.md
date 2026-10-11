@@ -88,7 +88,7 @@ flowchart LR
 
 |File                    | What it shows                                            |
 |------------------------|----------------------------------------------------------|
-|01 Scope and Context    |                                                          |
+|01 [Scope and Context]()   |                                                          |
 |02 Methodology          |                                                          | 
 |03 Risk Register        |                                                          |
 |04 Treatment Plan       |                                                          |
