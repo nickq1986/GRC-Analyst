@@ -15,7 +15,7 @@ A fictional GRC case study assessing an AI policy exception request involving pa
 
 > 𝐀𝐜𝐜𝐞𝐩𝐭𝐚𝐛𝐥𝐞 𝐔𝐬𝐞 𝐏𝐨𝐥𝐢𝐜𝐲, 𝟒.𝟑: ePHI must not be entered into any system that has not been approved by Security and covered by a Business Associate Agreement (BAA) where required.
 
-𝐖𝐡𝐚𝐭 𝐲𝐨𝐮 𝐤𝐧𝐨𝐰 𝐚𝐛𝐨𝐮𝐭 𝐭𝐡𝐞 𝐭𝐨𝐨𝐥
+##What there is to Know about the tool##
 - The free tier's terms allow user inputs to be used to improve the vendor's models
 - No BAA is available on the free tier
 - An enterprise tier exists at $30 per user per month: it includes a BAA, no training on customer data, SSO, and audit logs
