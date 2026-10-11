@@ -47,7 +47,6 @@ flowchart LR
         SSO["Identity Provider<br/>(SSO)"]
         M["Marketing Team<br/>(4 Staff)"]
         RD["Appointment Reminder Delivery<br/>(platform/channel unspecified)"]
-
     end
 
     subgraph EXT ["Current request: third-party free tier"]
