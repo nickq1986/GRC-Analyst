@@ -1,187 +1,126 @@
-# Establish Risk Criteria: Define risk acceptance criteria and baseline conditions for conducting risk assessments.
+# Document Reference: ISMS-DOC-02-RM
+**Classification:** Internal  
+**Version:** 1.0  
+**Status:** Approved  
+**Owner:** Information Security & Compliance  
+**Standard:** ISO/IEC 27001:2022 (Clause 6.1.2) & ISO/IEC 27005:2022
 
-## 1. Risk assessment parameters 
+---
 
-Likeliness:
+# 02 · Risk Assessment Methodology & Identification Framework
 
-1 = Negligible, unlikely to happen unless under exceptional circumstances. 
-2 = Unlikely, not expected to happen frequently 
-3 = Possible, may occur at some point 
-4 = High, expected to occur in most circumstances. 
-5 = Very High, Almost certain. Continuous or frequent occurrence.
+## 1. Information Security Risk Criteria (ISO/IEC 27001 Clause 6.1.2.a)
 
-Impact; 
+To ensure consistent, valid, and comparable risk assessment results across repeated executions, Northwind Health evaluates information security risks using standardized likelihood and impact parameters.
 
-1 = Negligible, minimal operational disruption; minor localized impact requiring basic remediation.   
-2 = Low, slight disruption; minor financial loss, minimal data exposure, or brief operational delays.  
-3 = Medium, moderate operational disruption; customer dissatisfaction, noticeable financial impact, or minor contractual non-compliance.  
-4 = High, significant disruption; legal or regulatory non-compliance, severe financial loss, or major brand/reputational damage.   
-5 = Critical, existential impact; severe operational shutdown, substantial regulatory fines, loss of critical IP, or catastrophic financial damage.   
+### 1.1 Likelihood Scale
+| Value | Rating | Definition |
+| :---: | :--- | :--- |
+| **1** | Negligible | Unlikely to occur; possible only under exceptional circumstances. |
+| **2** | Unlikely | Low probability; not expected to occur under standard operating conditions. |
+| **3** | Possible | Moderate probability; may occur at some point during routine operations. |
+| **4** | High | High probability; expected to occur in most operational circumstances. |
+| **5** | Very High | Almost certain; continuous or frequent occurrence anticipated. |
 
-## 2. Risk Formula
+### 1.2 Impact Scale
+| Value | Rating | Operational Definition |
+| :---: | :--- | :--- |
+| **1** | Negligible | Minimal operational disruption; minor localized impact requiring routine remediation. |
+| **2** | Low | Slight disruption; minor financial loss, minimal data exposure, brief operational delays. |
+| **3** | Medium | Moderate operational disruption; customer dissatisfaction, noticeable financial impact, minor contractual non-compliance. |
+| **4** | High | Significant disruption; statutory/regulatory non-compliance, severe financial loss, major brand damage. |
+| **5** | Critical | Existential impact; severe operational shutdown, substantial regulatory fines, compromise of core systems, catastrophic loss. |
 
-Overall risk is calculated using the formula
+---
 
-Risk = Likeliness x Impact 
+## 2. Risk Calculation & Acceptance Thresholds (ISO/IEC 27001 Clause 6.1.2.b)
 
+### 2.1 Risk Formula
+Overall risk levels are derived using a qualitative $5 \times 5$ matrix based on the standard formulation:
 
-```mermaid
-flowchart TB
-    subgraph matrix["Risk Matrix: Likeliness x Impact"]
-        direction TB
-        subgraph header[" "]
-            direction LR
-            h0["Likeliness ↓ / Impact →"]:::axis
-            h1["1<br/>Negligible"]:::axis
-            h2["2<br/>Low"]:::axis
-            h3["3<br/>Medium"]:::axis
-            h4["4<br/>High"]:::axis
-            h5["5<br/>Critical"]:::axis
-            h0 ~~~ h1 ~~~ h2 ~~~ h3 ~~~ h4 ~~~ h5
-        end
-        subgraph row5[" "]
-            direction LR
-            l5["5<br/>Very High"]:::axis
-            r51["5<br/>Moderate"]:::moderate
-            r52["10<br/>High"]:::high
-            r53["15<br/>High"]:::high
-            r54["20<br/>Critical"]:::critical
-            r55["25<br/>Critical"]:::critical
-            l5 ~~~ r51 ~~~ r52 ~~~ r53 ~~~ r54 ~~~ r55
-        end
-        subgraph row4[" "]
-            direction LR
-            l4["4<br/>High"]:::axis
-            r41["4<br/>Low"]:::low
-            r42["8<br/>Moderate"]:::moderate
-            r43["12<br/>High"]:::high
-            r44["16<br/>High"]:::high
-            r45["20<br/>Critical"]:::critical
-            l4 ~~~ r41 ~~~ r42 ~~~ r43 ~~~ r44 ~~~ r45
-        end
-        subgraph row3[" "]
-            direction LR
-            l3["3<br/>Possible"]:::axis
-            r31["3<br/>Low"]:::low
-            r32["6<br/>Moderate"]:::moderate
-            r33["9<br/>Moderate"]:::moderate
-            r34["12<br/>High"]:::high
-            r35["15<br/>High"]:::high
-            l3 ~~~ r31 ~~~ r32 ~~~ r33 ~~~ r34 ~~~ r35
-        end
-        subgraph row2[" "]
-            direction LR
-            l2["2<br/>Unlikely"]:::axis
-            r21["2<br/>Low"]:::low
-            r22["4<br/>Low"]:::low
-            r23["6<br/>Moderate"]:::moderate
-            r24["8<br/>Moderate"]:::moderate
-            r25["10<br/>High"]:::high
-            l2 ~~~ r21 ~~~ r22 ~~~ r23 ~~~ r24 ~~~ r25
-        end
-        subgraph row1[" "]
-            direction LR
-            l1["1<br/>Negligible"]:::axis
-            r11["1<br/>Low"]:::low
-            r12["2<br/>Low"]:::low
-            r13["3<br/>Low"]:::low
-            r14["4<br/>Low"]:::low
-            r15["5<br/>Moderate"]:::moderate
-            l1 ~~~ r11 ~~~ r12 ~~~ r13 ~~~ r14 ~~~ r15
-        end
-    end
-    header ~~~ row5 ~~~ row4 ~~~ row3 ~~~ row2 ~~~ row1
+$$\text{Risk Rating} = \text{Likelihood} \times \text{Impact}$$
 
-    classDef axis fill:#e2e8f0,stroke:#475569,color:#0f172a,font-weight:bold;
-    classDef low fill:#dcfce7,stroke:#16a34a,color:#14532d;
-    classDef moderate fill:#fef9c3,stroke:#ca8a04,color:#713f12;
-    classDef high fill:#ffedd5,stroke:#ea580c,color:#7c2d12;
-    classDef critical fill:#fee2e2,stroke:#dc2626,color:#7f1d1d,font-weight:bold;
-```
+### 2.2 Risk Acceptance Criteria
+* **Low Risk (1–5):** Within organizational risk appetite. Acceptable without mandatory treatment.
+* **Medium Risk (6–12):** Exceeds baseline risk appetite. Risk owner must evaluate; treatment required where standard controls are feasible.
+* **High / Critical Risk (13–25):** Strictly exceeds organizational risk appetite. Mandatory risk treatment, executive escalation, and immediate control implementation required.
 
-## 3. Risk Acceptance Criteria
-* **Low (1–5):** Risk is within appetite. Acceptable; no mandatory remediation needed.
-* **Medium (6–12):** Risk owner must evaluate; treatment required if simple controls exist.
-* **High / Critical (13–25):** Exceeds risk appetite.
+### 2.3 Baseline Assessment Conditions
+A formal risk assessment must be executed prior to granting authorization for policy exceptions, under the baseline condition: *"Prior to major system changes, deployments, policy exception approvals, or architectural alterations."*
 
-## 4. Baseline Conditions for Assessments
-Risk assessment must be conducted prior granting authorisation to action exception request for Northwind Health AI use policy, under the following baseline condition:
+### 2.4 Evidence-Based Assessment Rules
+* **Mandatory Justification:** Every assigned Likelihood and Impact score must be accompanied by documented rationale.
+* **Recorded Assumptions:** Assumptions regarding technical boundaries, vendor configurations, or baseline controls must be explicitly documented in the Risk Register.
 
-"Prior to major system changes, deployments, or architecture alterations"
+---
 
-# Ensure Consistency: Design the assessment process to yield consistent, valid, and comparable results over repeated executions.
+## 3. Risk Identification & Asset Analysis (ISO/IEC 27001 Clause 6.1.2.c)
 
-Evidence-Based Rationale & Documentation
-* **Mandatory Justification:** Every assigned Likeliness and Impact score must be accompanied by a documented rationale.
-* **Documented Assumptions:** Any assumptions regarding existing controls, asset boundaries, or operational environments must be explicitly recorded in the Risk Register.
+Risks are identified by evaluating the intersection of technical vulnerabilities and applicable privacy/security threats across the target asset ecosystem.
 
-# Risk Identification
-Identify Risks: Identify risks related to the loss of security within the ISMS scope, and assign risk owners to each.
+$$\text{Risk Scenario} = \text{Vulnerability} + \text{Threat Scenario}$$
 
-## 1. Asset Inventory
+### 3.1 Target Asset Architecture & Vulnerability Findings
+The policy exception evaluation identified five core asset vulnerabilities within the proposed workflow:
 
-The Asset register models of the exception requests projected free tier Ai system that is designed to deliver automated reminders to patients containing ePHI. The Asset inventory can be found [here](https://github.com/nickq1986/GRC-Analyst/blob/main/documents/Northwinds%20Health_Asset_Register.md) 
+* **V-001 (A005 — Free-Tier AI Writing Assistant):** Authentication operates outside Northwind Identity Provider (no SSO); no Business Associate Agreement (BAA) is executed; vendor terms allow input data to train public models.
+* **V-002 (A006 — Vendor Model Improvement Process):** ePHI retained and ingested into model training pipelines without contractual or technical boundaries.
+* **V-003 (A007 — AI Local Caching/Storage):** Temporary storage caches ePHI without documented access controls, retention boundaries, or automatic deletion schedules *(Requires Validation)*.
+* **V-004 (A009 — Delivery Platform Configuration):** Downstream messaging platform processes notification data; contractual BAA status and ePHI transmission controls unverified *(Requires Validation)*.
+* **V-005 (A010 — Patient Delivery Destinations):** Endpoint destinations (phone numbers, email addresses) lack ownership verification and encryption safeguards at rest on recipient devices.
 
-## 2. Vulnerability Findind
-From the register the current vulnerability findings are:
+---
 
-- A005 — Free-tier AI writing assistant: Northwind SSO is not used; no BAA is executed; and the free-tier terms allow inputs to be used to improve the vendor’s models.
-- A006 — AI data improvement process: ePHI may be retained and used for model improvement, with no BAA executed.
-- A007 — AI database software: It caches ePHI, but the register doesn’t state the cache’s access, protection, retention or deletion controls. Record this as needs validation, not a confirmed vulnerability.
-- A009 — Message delivery platform: It processes ePHI, but the register says no BAA is required. Validate the platform’s role and whether that status is correct before calling it a vulnerability.
-- A010 — Patient delivery destinations: The owner and safeguards are unspecified. That’s an information gap to investigate; unknown SSO alone doesn’t establish a vulnerability for patient destinations.
+### 3.2 Threat Modeling (LINDDUN Privacy & STRIDE Framework)
+Threat scenarios mapped against the proposed architecture include:
 
-## 3. Threat Modelling 
+| Threat ID | Threat Category | Scenario Description |
+| :--- | :--- | :--- |
+| **T-01** | Linkability | Repeated ePHI prompts enable vendor systems to construct patient profiles. |
+| **T-02** | Identifiability | Combination of first name, clinic, and date allows direct patient identification. |
+| **T-03** | Disclosure | Unprotected transmission of identifiable ePHI to unauthorized third-party vendor. |
+| **T-04** | Non-Compliance | Ingestion of ePHI without a executed BAA violates HIPAA §164.514(b) and internal AUP §4.3. |
+| **T-05** | Linkability | Metadata or recurring reminder intervals expose patient care patterns. |
+| **T-06** | Identifiability | Unencrypted reminder text on external platforms reveals clinical relationships. |
+| **T-07** | Non-Repudiation | Delivery logs establish permanent evidentiary records of medical care. |
+| **T-08** | Detectability | External notifications expose patient association with specialized clinics. |
+| **T-09** | Disclosure | Misdirected messages deliver ePHI to unauthorized third parties or shared devices. |
+| **T-10** | Linkability | Vendor training datasets link individual prompts across multiple appointments. |
+| **T-11** | Identifiability | Vendor temporary storage caches persist patient identifiers indefinitely. |
+| **T-12** | Non-Repudiation | Retained vendor prompts serve as external records of patient care. |
+| **T-13** | Detectability | Model output generation reveals prior ingestion of proprietary patient data. |
+| **T-14** | Disclosure | Vendor data breach or unauthorized access exposes cached ePHI storage. |
+| **T-15** | Unawareness | Patients remain uninformed that third-party AI vendors process appointment data. |
+| **T-16** | Disclosure | Messaging platform infrastructure lacks verified encryption controls. |
+| **T-17** | Non-Compliance | Unclear BAA execution status with downstream messaging providers. |
 
-Threats were identified using the  [Northwind LINDDUN threat model](documents/Threat%20Model.md), as follows: 
+---
 
-1. T01 — Linkability: Repeated ePHI prompts may be linked into a patient profile.
-2. T02 — Identifiability: Prompt details may identify the patient.
-3. T03 — Disclosure: Identifiable ePHI is disclosed to the free-tier AI vendor.
-4. T04 — Non-compliance: Free-tier processing may conflict with policy or privacy obligations.
-5. T05 — Linkability: Repeated reminders or metadata may reveal a patient’s care pattern.
-6. T06 — Identifiability: Reminder content or records may identify the patient and care context.
-7. T07 — Non-repudiation: Delivery records may evidence a patient’s care relationship.
-8. T08 — Detectability: A notification may reveal clinic involvement.
-9. T09 — Disclosure: A shared or incorrect destination may receive ePHI.
-10. T10 — Linkability: Training data may link prompts across appointments.
-11. T11 — Identifiability: Stored prompts or cached data may retain patient identifiers.
-12. T12 — Non-repudiation: Retained prompts or records may evidence an appointment.
-13. T13 — Detectability: Vendor data or model behavior may reveal that patient data was included.
-14. T14 — Disclosure: Cached or retained ePHI may be exposed from vendor storage.
-15. T15 — Unawareness: Patients may not know a vendor processes reminder data; notice status needs checking.
-16. T16 — Disclosure: The reminder platform’s ePHI safeguards are not established.
-17. T17 — Non-compliance: Whether a BAA is required for the reminder platform is unresolved.
+## 4. Derived Risk Register Statements
 
+Combining vulnerabilities and mapped threat scenarios yields five core risk statements for formal scoring and prioritization:
 
-## Risk Identification 
+### R-001: Public Model Training on Unsanitized ePHI
+* **Vulnerability:** V-001 (Free-tier AI assistant lacking BAA and SSO).
+* **Mapped Threats:** T-02, T-03, T-04, T-13.
+* **Risk Statement:** If Marketing enters identifiable patient details into the free-tier AI assistant, ePHI will be disclosed to an unvetted vendor and ingested into public training models without statutory safeguards, causing an immediate HIPAA breach and regulatory non-compliance.
 
-The risk identification process follows the standard security formulation:
+### R-002: Third-Party Data Retention & Re-identification
+* **Vulnerability:** V-002 (Vendor model training pipeline).
+* **Mapped Threats:** T-01, T-05, T-10, T-12.
+* **Risk Statement:** If the vendor retains ePHI for model training, patient data across multiple appointments could be linked or inferred within vendor-controlled storage, creating permanent external data exposure beyond Northwind's governance boundary.
 
-Risk = (Vulnerability + Threats)
+### R-003: Indefinite Data Persistence in Temporary Caches
+* **Vulnerability:** V-003 (Unvalidated AI caching mechanisms).
+* **Mapped Threats:** T-11, T-14.
+* **Risk Statement:** If vendor local caching mechanisms lack enforced auto-deletion and access restrictions, persistent ePHI records could be exposed during a third-party vendor compromise or unauthorized system access.
 
-The vulnerability-to-threat mapping table is in the [Risk Identification Methodology document](documents/Risk%20Identification%20Methodology.md). For each vulnerability, the table links the relevant threat IDs, describes those threats, and gives one overall risk statement combining the vulnerability. The Overall risk statements were assigned to a Risk-Id as follows: 
+### R-004: Unverified Messaging Infrastructure Governance
+* **Vulnerability:** V-004 (Delivery platform BAA uncertainty).
+* **Mapped Threats:** T-16, T-17.
+* **Risk Statement:** If downstream message delivery platforms process appointment metadata without a verified BAA or adequate technical safeguards, transmission records could expose clinical relationship details to unauthorized intermediaries.
 
-- R-001 — Free-tier AI writing assistant: If Marketing uses the free tier with identifiable appointment data, ePHI could be disclosed to the vendor and retained or used for model improvement without Northwind’s approved safeguards, potentially exposing patient-care relationships and causing policy or privacy non-compliance.
-- R-002 — AI data improvement process: If the vendor retains ePHI for model improvement, data from multiple appointments could be linked or inferred in vendor-controlled storage or models, increasing the chance of identifying patients or exposing their care information outside Northwind’s control.
-- R-003 — AI database software/cache: If cached ePHI lacks effective access, protection, retention, or deletion safeguards, identifiers and appointment details could persist and be exposed. The register does not establish whether these safeguards are absent, so this risk requires validation.
-- R-004 — Message delivery platform: If the delivery platform lacks appropriate safeguards, or a required BAA is absent, reminder content, metadata, or delivery records could reveal patient-care information to others and create privacy or contractual non-compliance. The platform’s role and BAA applicability need confirmation.
-- R-005 — Patient delivery destinations: If a destination is shared, outdated, or incorrect, or a notification is visible to others, reminders or delivery metadata could reveal a patient’s identity and care relationship to an unintended recipient. Destination ownership and safeguards are unspecified.
-
-# Risk Analysis 
-
-The Risk-ID's and Risk Statements were documented in the Risk Register to  Assess potential consequences, evaluate the realistic likelihood of occurrence, and determine overall risk levels.
-
-
-
-
-
-
-
-
-Evaluate & Prioritize Risks: Compare analyzed risks against established risk criteria and prioritize them for risk treatment.
-
-Document the Process: Retain documented information covering the entire risk assessment workflow.
-
-
-
+### R-005: Message Misdirection to Unintended Recipients
+* **Vulnerability:** V-005 (Unverified patient delivery destinations).
+* **Mapped Threats:** T-08, T-09, T-15.
+* **Risk Statement:** If appointment notifications are transmitted to shared, outdated, or incorrect recipient destinations, private healthcare details will be disclosed to unintended third parties, generating privacy complaints and breach notification obligations.
