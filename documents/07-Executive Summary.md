@@ -60,6 +60,6 @@ Remediation of the critical gap requires **zero additional capital expenditure**
 
 Upon execution of the 30-day and 90-day recommended actions:
 
-* **Residual Risk Reduction:** Critical Risk **R-001** decreases from **25 (Critical)** to **2 (Low)**; High Risks **R-002 through R-004** fall to **Medium/Low**.
+
 * **Compliance Alignment:** Fully aligns Northwind Health with ISO/IEC 27001:2022 Controls A.5.19, A.5.20, A.8.10, and HIPAA Security Rule § 164.308.
 * **Audit Readiness:** Satisfies prerequisite vendor management and access control criteria for upcoming SOC 2 Type II audit certifications required by enterprise clinic clients.
