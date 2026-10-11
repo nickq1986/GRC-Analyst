@@ -1,7 +1,7 @@
 👋 Hi, I'm Nick Quinn
-Cyber Security & GRC Analyst | MSc, MIET, GCIH | GSEC. GSOC, GHIC
+Cyber Security & GRC Analyst | MSc, MIET | GSEC. GSOC, GHIC
 
-I'm transitioning into a civilian cybersecurity governance, risk, and compliance (GRC) career following 20 years of military service in the Parachute Regiment
+I'm transitioning into a civilian cybersecurity governance, risk, and compliance (GRC) career following 20 years of military service in the Parachute Regiment.
 
 📂 Featured Projects
 
