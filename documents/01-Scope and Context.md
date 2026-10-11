@@ -53,7 +53,7 @@ The scope of the Information Security Management System (ISMS) encompasses all p
 ## 3. ISMS Operations & Stakeholder Engagement (ISO/IEC 27001 Clause 4.4)
 
 ### 3.1 Risk Assessment Boundaries & Assumptions
-* **Assessment Scope:** Point-in-time risk evaluation effective September 2026.
+* **Assessment Scope:** Point-in-time risk evaluation effective October 2026.
 * **Assessment Methodology:** Documentation review, architectural configuration evaluation, and structured stakeholder interviews.
 * **Technical Validation:** Risk identification based on architectural and configuration review; dynamic penetration testing evaluated under separate risk cycles.
 
