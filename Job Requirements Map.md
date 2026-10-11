@@ -4,7 +4,7 @@
 # 08 · Job Requirements Map
 
 ## Overview
-This repository was engineered by reverse-engineering core requirements from entry-level and junior Cyber Security GRC Analyst job specifications across healthcare, financial, and enterprise SaaS sectors. 
+This repository was engineered by reverse-engineering core requirements from entry-level and junior Cyber Security GRC Analyst job specifications. 
 
 The matrix below maps real-world hiring criteria directly to the technical and governance deliverables produced within this portfolio.
 
