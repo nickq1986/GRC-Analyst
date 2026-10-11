@@ -1,7 +1,7 @@
 
 ---
 
-# 08 · Job Requirements Map
+#  Job Requirements Map
 
 ## Overview
 This repository was engineered by reverse-engineering core requirements from entry-level and junior Cyber Security GRC Analyst job specifications. 
