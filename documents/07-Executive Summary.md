@@ -39,3 +39,25 @@ Remediation of the critical gap requires **zero additional capital expenditure**
 ---
 
 ## 3. Recommended Remediation Roadmap
+
+30-DAY ACTIONS (IMMEDIATE)                                                        |
+| - Formally deny policy exception for free-tier AI assistant (Asset A005).         |
+| - Issue updated AI Acceptable Use Policy (AUP) to Marketing & General Staff.      |
+| - Execute BAA and security verification for downstream messaging platform (A009). |
++-----------------------------------------------------------------------------------+
+|
+v
++-----------------------------------------------------------------------------------+
+| 90-DAY ACTIONS (MEDIUM-TERM)                                                      |
+| - Procure Enterprise AI licenses (Asset A008) at $30/user/month ($120/month total).|
+| - Enforce SAML 2.0 / SSO integration and mandatory MFA via corporate IdP.          |
+| - Configure automated 24-hour cache purging and zero-data-retention API headers.  |
++-----------------------------------------------------------------------------------+
+|
+v
++-----------------------------------------------------------------------------------+
+| 180-DAY ACTIONS (STRATEGIC)                                                       |
+| - Deploy Cloud Access Security Broker (CASB) / DLP rules to block shadow AI.      |
+| - Establish automated Vendor Risk Assessment (VRA) intake workflows.             |
+| - Conduct annual ISO 27001 ISMS Management Review and SOC 2 Type II readiness.    |
++-----------------------------------------------------------------------------------+
