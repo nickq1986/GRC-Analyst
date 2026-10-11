@@ -87,9 +87,10 @@ flowchart LR
 
     linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
 ```
-#Projuct Structure
+#Project Structure
+
 |File                    | What it shows                                            |
--------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------------|
 |01 Scope and Context    |                                                          |
 |02 Methodology          |                                                          | 
 |03 Risk Register        |                                                          |
