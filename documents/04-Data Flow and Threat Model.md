@@ -1,4 +1,33 @@
-# Northwind Health LINDDUN Threat Model
+# Document Reference: ISMS-DOC-04-TM
+**Classification:** Internal  
+**Version:** 1.0  
+**Status:** Approved  
+**Owner:** Information Security & Compliance  
+**Standard:** ISO/IEC 27001:2022 (Clause 6.1.2) & ISO/IEC 27701:2019 (Clause 6.5)
+
+---
+
+# 03 · Threat Model & Identification Register
+
+## 1. Scope & Objective (ISO/IEC 27001 Clause 6.1.2.a)
+
+This document records the systematic threat identification executed for the proposed AI writing assistant policy exception request at Northwind Health. In alignment with ISO/IEC 27005 guidelines, threat scenarios are identified and mapped against target system assets without assigning likelihood or impact scores at this stage. Qualitative risk analysis and scoring are conducted subsequently in the Risk Register (`ISMS-DOC-03.1-RR`).
+
+---
+
+## 2. Target Asset & Vulnerability Baseline
+
+The threat modeling boundary evaluates the primary asset components identified in the exception request asset register (`ISMS-DOC-01-AR`):
+
+* **A005 — Free-Tier AI Writing Assistant:** Unmanaged third-party software operating outside Northwind SSO; no Business Associate Agreement (BAA) executed; terms allow prompt inputs to be used for model training.
+* **A006 — AI Data Improvement Process:** Third-party vendor process where inputs containing ePHI are retained and used to train and optimize models without contractual safeguards.
+* **A007 — AI Database Software / Cache:** Ephemeral session caching and processing layer; controls surrounding access, protection, retention, and deletion require validation.
+* **A009 — Message Delivery Platform:** Intermediary platform processing personalized reminders containing ePHI; BAA applicability and technical safeguards require confirmation.
+* **A010 — Patient Delivery Destinations:** Recipient devices and endpoints (SMS, email); ownership, access controls, and device-level safeguards are unspecified.
+
+---
+
+## 3. Threat Model Architecture Diagram
 
 The diagram maps the identified LINDDUN threats to the ePHI prompt, vendor storage, and patient reminder flows. Threats remain open for subsequent risk assessment; severity and risk scores are not assigned here.
 
@@ -54,4 +83,3 @@ flowchart LR
     class DP delivery;
     class P patient;
     class TAI,TV,TR,TP,TDP threat;
-```

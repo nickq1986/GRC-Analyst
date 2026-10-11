@@ -1,11 +1,11 @@
 # GRC-Analyst
 A fictional GRC case study assessing an AI policy exception request involving patient data at a healthcare SaaS company. It demonstrates evaluating ePHI classification, risk scoring, compliance decisions, and drafting clear stakeholder communication in a regulated environment.
 
-# Scenario
+# Overview
 
 𝐍𝐨𝐫𝐭𝐡𝐰𝐢𝐧𝐝 𝐇𝐞𝐚𝐥𝐭𝐡, a 120-person US healthcare SaaS company that stores patient data (ePHI) for around 400 clinics.
 
-𝐓𝐢𝐜𝐤𝐞𝐭 𝐟𝐫𝐨𝐦 𝐲𝐨𝐮𝐫 𝐦𝐚𝐧𝐚𝐠𝐞𝐫:
+As a GRC Analyst, I have received ticker from the line manager:
 
 > "Marketing want an exception to our AI policy. Can you assess it and recommend a decision? Please draft the reply to the Head of Marketing too."
 𝐓𝐡𝐞 𝐫𝐞𝐪𝐮𝐞𝐬𝐭 (𝐟𝐫𝐨𝐦 𝐭𝐡𝐞 𝐇𝐞𝐚𝐝 𝐨𝐟 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠)
@@ -15,31 +15,27 @@ A fictional GRC case study assessing an AI policy exception request involving pa
 
 > 𝐀𝐜𝐜𝐞𝐩𝐭𝐚𝐛𝐥𝐞 𝐔𝐬𝐞 𝐏𝐨𝐥𝐢𝐜𝐲, 𝟒.𝟑: ePHI must not be entered into any system that has not been approved by Security and covered by a Business Associate Agreement (BAA) where required.
 
-𝐖𝐡𝐚𝐭 𝐲𝐨𝐮 𝐤𝐧𝐨𝐰 𝐚𝐛𝐨𝐮𝐭 𝐭𝐡𝐞 𝐭𝐨𝐨𝐥
+**What there is to Know about the tool**
 - The free tier's terms allow user inputs to be used to improve the vendor's models
 - No BAA is available on the free tier
 - An enterprise tier exists at $30 per user per month: it includes a BAA, no training on customer data, SSO, and audit logs
 - The marketing team has four people
 
+The combination of patient's first name, appointment type, clinic, and date is ePHI. Sections 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers. The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).
 
-𝐘𝐨𝐮𝐫 𝐝𝐞𝐥𝐢𝐯𝐞𝐫𝐚𝐛𝐥𝐞𝐬
+**Why I built this:** After reviewing dozens of GRC job descriptions, risk assessments and risk registers were always at the top of the list. I wanted to go beyond resume keywords and show hiring managers audit-ready work that reflects day-one readiness.  See [how this project maps to real job requirements](https://github.com/nickq1986/GRC-Analyst/blob/refine/Job%20Requirements%20Map.md).
 
-1. 𝐈𝐬 𝐭𝐡𝐢𝐬 𝐞𝐏𝐇𝐈? Answer yes or no and explain why.
-2. 𝐒𝐜𝐨𝐫𝐞 𝐭𝐡𝐞 𝐫𝐢𝐬𝐤 of approving the request as written, using Likelihood × Impact on a 1-5 scale, with one sentence justifying each number.
-3. 𝐘𝐨𝐮𝐫 𝐝𝐞𝐜𝐢𝐬𝐢𝐨𝐧: approve, deny, or approve with conditions. If conditions, list them.
-4. 𝐘𝐨𝐮𝐫 𝐫𝐞𝐩𝐥𝐲 𝐭𝐨 𝐭𝐡𝐞 𝐇𝐞𝐚𝐝 𝐨𝐟 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠: 200 words maximum, no jargon, and offer a way forward rather than just a "no."
-𝐵𝑜𝑛𝑢𝑠 𝑝𝑜𝑖𝑛𝑡 𝑓𝑜𝑟 𝑡ℎ𝑒 𝑏𝑒𝑠𝑡 𝑖𝑑𝑒𝑎 𝑡ℎ𝑎𝑡 𝑠𝑜𝑙𝑣𝑒𝑠 𝑀𝑎𝑟𝑘𝑒𝑡𝑖𝑛𝑔'𝑠 𝑝𝑟𝑜𝑏𝑙𝑒𝑚 𝑤𝑖𝑡ℎ𝑜𝑢𝑡 𝑎𝑛𝑦 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑑𝑎𝑡𝑎 𝑙𝑒𝑎𝑣𝑖𝑛𝑔 𝑁𝑜𝑟𝑡ℎ𝑤𝑖𝑛𝑑 𝑎𝑡 𝑎𝑙𝑙.
-
-# Findings 
+# Key Findings 
  
-Path: [GRC]
-
-## Deliverable 1 Determination of ePHI 
-
-1. [The combination of patient's first name, appointment type, clinic, and date is ePHI. Sections 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers. The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).]
 
   
- **Architecture**
+| Rating         | Count    | Headline |
+|----------------|----------|---------------------------------------------------------------------------------------------------------------------------|
+| 🔴Critical     | 1        | Uploading protected patient data to free AI tools causing a major compliance violation.
+| 🟠High         | 2        | Storing patient data with outside AI vendors, creating severe, permanent risks of re-identification and improper access.  |  
+| 🟡High/Medium  | 3        | Access control issues and Non-compliance cause severe privacy breaches and HIPAA fines.                                   |
+  
+ # Architecture
 
 ```mermaid
 flowchart LR
@@ -48,7 +44,6 @@ flowchart LR
         SSO["Identity Provider<br/>(SSO)"]
         M["Marketing Team<br/>(4 Staff)"]
         RD["Appointment Reminder Delivery<br/>(platform/channel unspecified)"]
-
     end
 
     subgraph EXT ["Current request: third-party free tier"]
@@ -90,101 +85,38 @@ flowchart LR
 
     linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
 ```
-2. [
+# Project Structure
 
-## Risk Rating and Justification 
-  
-**R-001** – Risk of leaking patient data and breaking privacy laws because Marketing uses free AI tools with real patient details.
+|File                    | What it shows                                            |
+|------------------------|----------------------------------------------------------|
+|01 [Scope and Context](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/01-Scope%20and%20Context.md)   |     Defines the organizational context, interested party requirements, and operational boundaries (scope) for Northwind Health’s ISO 27001-compliant Information Security Management System (ISMS).                                                     |
+|02 [Asset Register](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/02-Northwinds%20Health_Asset_Register.md)          |  Catalogues organizational assets, owners, trust boundaries, and compliance attributes (ePHI, BAA, SSO) to establish the scope for risk analysis.                                                        | 
+|03 [Risk Assessment Methodology](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/03-Risk%20Assessment%20Methodology.md)        |   Defines the methodology for identifying, scoring, and prioritizing threats and vulnerabilities to ensure consistent risk evaluation.                                                       |
+|04 [Data Flow and Threat Model](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/04-Data%20Flow%20and%20Threat%20Model.md)       |   Maps data flows across trust boundaries and systematically identifies LINDDUN privacy threats to highlight system vulnerabilities before risk scoring.                                                       |
+|05 [Vulnerability-to-Threat Mapping & Risk Statement Register](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/05-Vulnerability-to-Threat%20Mapping%20%26%20Risk%20Statement%20Register.md)    |                Aggregates granular threats against specific asset vulnerabilities to construct structured risk statements for downstream scoring.                                          |
+|06 [Risk Register and Treatment Plan](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/06-Risk%20Register%20and%20Treatment%20Plan.md) |                                                          |Evaluates pre-mitigation risk severity using likelihood and impact scoring, assigning control owners, ISO 27002 mitigation measures, and operational remediation timelines.
 
-**Rating** 25/25 
+# Frameworks Used
+- HIPAA Security Rule: regulatory requirements for ePHI
+- ISO/IEC 27001 For Risk Assessment Process
+- ISO/IEC 27002 For control mapping
 
-**Justification** Free AI tools use public inputs to train their models. Uploading real patient data creates an instant HIPAA breach, regulatory fines, and public exposure.
+  # What I learned
 
-**R-002** – Risk of patients being identified because outside AI vendors keep and use patient data to train their systems.
+- Formal Threat Mapping Clarifies Risk: Using LINDDUN to map specific threats against asset vulnerabilities prevented overlap and created distinct, actionable risk statements.
 
-**Rating** 16/25
+-Compliance Expectations Shape Severity: The presence of ePHI under HIPAA transformed what would be a minor shadow IT concern into a critical regulatory non-compliance issue.
 
-**Justification** Vendors keeping data for training means patient details are permanently stored outside our control, creating a risk of patients being re-identified.
 
-**R-003** – Risk of patient data lingering indefinitely or being accessed improperly due to weak storage and deletion controls in AI software.
+# What I would Improve 
 
-**Rating** 16/25
 
-**Justification** Without strict auto-delete rules, sensitive data stays in temporary AI storage indefinitely, creating an unmonitored target for data leaks.
+While this assessment effectively resolved the immediate policy exception request, a comprehensive post-assessment review highlights key areas to mature Northwind Health’s GRC operational posture:
 
-**R-004** – Risk of unauthorized access and former employees keeping system access because AI accounts do not use company login controls (SSO).
 
-**Rating** 12/25 Medium/High
+* **Formulate a Dedicated AI Governance Policy:** Expand the general Acceptable Use Policy (Section 4.3) into a standalone AI Governance Framework covering generative AI usage, prompt engineering boundaries, model training opt-outs, and shadow AI detection mechanisms.
+* **Formalize Quantitative Risk Analysis (FAIR Integration):** Enhance the qualitative $5 \times 5$ ISO 27005 matrix by incorporating quantitative financial loss modeling (Factor Analysis of Information Risk) to provide executive stakeholders with annualized loss expectancy (ALE) projections for regulatory breach scenarios.
 
-**Justification** Personal logins mean IT cannot enforce strong password policies. When employees leave the company, their access cannot be automatically blocked, creating a back-door security risk.
-
-**R-005** – Risk of patient medical details reaching the wrong person due to outdated, shared, or unverified contact information.
-
-**Rating** 9/25 Medium
-
-**Justification** Sending messages to shared family phones or outdated numbers accidentally exposes private medical appointments to unintended recipients, leading to privacy complaints.
-
-**R-006** –  Risk of privacy breaches and legal penalties because messaging tools lack required vendor contracts (BAAs) and security controls.
-
-**Score** 8/25 Medium
-
-**Justification** Using messaging software without a signed healthcare contract (BAA) violates federal privacy laws (HIPAA), exposing the organization to legal fines during audits.
-
-]
-
-3. [
-# Approve with Conditions 
-
-## Condition 1: Mitigate R-001 and R-002 ##
-
-_Controls_: ISO 27001 A.5.10, A.5.20 
-
-Immediately cease all use of free-tier AI tools. Marketing must use an approved enterprise-licensed AI platform with explicit contractual guarantees prohibiting vendor retention or training on organization data.
-
-## Condition 2: Mitigate R-003
-
-_Controls_: ISO 27001 A.8.10
-
-Enable automated data retention policies within the AI software to ensure temporary caches, logs, and stored prompts are purged immediately after processing ().
-
-## Condition 4: Mitigate R-004
-
-_Controls_: ISO 27001 A.5.15, A.5.18
-
-Intercept and route all AI software user authentication through Enterprise Single Sign-On (SSO) with Multi-Factor Authentication (MFA) to ensure central control and automated access revocation upon employee offboarding.
-
-## Condition 5: Mitigate R-005 
-
-_Controls_: ISO 27001 A.8.11
-
-Strip specific medical/treatment details from outbound automated messages (e.g., send generic appointment reminders requiring a secure login to view details) to prevent disclosure via shared or outdated contact numbers.
-
-## Condition 6: Mitigate R-006
-
-_Controls_; ISO 27001 A.8.11
-
-Strip specific medical/treatment details from outbound automated messages (e.g., send generic appointment reminders requiring a secure login to view details) to prevent disclosure via shared or outdated contact numbers .
-
-4.[
-
-Decision: Approved with Conditions
-
-Hi,
-
-We have completed the risk assessment for the proposed AI tools and messaging workflows. Rather than blocking these initiatives, we want to help Marketing move forward quickly and safely.
-
-To protect patient privacy, comply with healthcare regulations, and safeguard company systems, we need to put five practical guardrails in place before rollout:
-
-Switch to Enterprise AI: Free AI tools use real patient data for their own learning. We will set you up on an enterprise-licensed tool where data stays strictly private.
-
-Centralized Logins (SSO): Access will be routed through standard company logins so IT can secure accounts and manage access automatically.
-
-Automatic Data Wiping: We will configure the system to clear temporary data and search histories automatically.
-
-Sign Vendor Contracts: Our legal team must execute required healthcare privacy contracts (BAAs) with all messaging vendors before sending live messages.
-
-Generic Notifications: Message content will be kept general (e.g., "You have a new appointment reminder") to prevent sensitive medical details from showing up on shared household devices.
-
-Our team is ready to partner with you to get these safeguards configured so you can launch securely. Let’s schedule a quick kickoff next week.
-]
+# Tools
+Markdown, Mermaid, IS0/27001, HIPAA Security Rule
 
