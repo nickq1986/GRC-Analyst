@@ -30,13 +30,13 @@ A fictional GRC case study assessing an AI policy exception request involving pa
 The combination of patient's first name, appointment type, clinic, and date is ePHI. Section 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers.
 
 The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).
-
-| Rating       | Count    | Headline |
-|----------    |----------|---------------------------------------------------------------------------------------------------------------------------|
-| Critical     | 1        | Uploading protected patient data to free AI tools causing a major compliance violation.
-| High         | 2        | Storing patient data with outside AI vendors, creating severe, permanent risks of re-identification and improper access.  |  
-| High/Medium  | 1        | Non-SSO AI accounts allow improper access and former employees to retain system entry.                                    | 
-| Medium       | 2        | Non-compliant messaging and outdated numbers cause severe privacy breaches and HIPAA fines.                               |
+  
+| Rating         | Count    | Headline |
+|----------------|----------|---------------------------------------------------------------------------------------------------------------------------|
+| 🔴Critical     | 1        | Uploading protected patient data to free AI tools causing a major compliance violation.
+| High           | 2        | Storing patient data with outside AI vendors, creating severe, permanent risks of re-identification and improper access.  |  
+| High/Medium    | 1        | Non-SSO AI accounts allow improper access and former employees to retain system entry.                                    | 
+| Medium         | 2        | Non-compliant messaging and outdated numbers cause severe privacy breaches and HIPAA fines.                               |
   
  # Architecture
 
