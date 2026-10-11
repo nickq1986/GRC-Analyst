@@ -56,7 +56,7 @@ A formal risk assessment must be executed prior to granting authorization for po
 
 ## 3. Risk Identification & Asset Analysis (ISO/IEC 27001 Clause 6.1.2.c)
 
-Risks are identified by evaluating the intersection of technical vulnerabilities and applicable privacy/security threats across the target asset ecosystem.
+Risks are identified by evaluating the intersection of technical vulnerabilities and privacy threats across the target asset ecosystem using the LINDDUN threat modeling framework.
 
 $$\text{Risk Scenario} = \text{Vulnerability} + \text{Threat Scenario}$$
 
@@ -71,15 +71,15 @@ The policy exception evaluation identified five core asset vulnerabilities withi
 
 ---
 
-### 3.2 Threat Modeling (LINDDUN Privacy & STRIDE Framework)
-Threat scenarios mapped against the proposed architecture include:
+### 3.2 LINDDUN Privacy Threat Modeling
+Threat scenarios mapped against the proposed architecture using the LINDDUN threat taxonomy include:
 
-| Threat ID | Threat Category | Scenario Description |
+| Threat ID | LINDDUN Category | Scenario Description |
 | :--- | :--- | :--- |
 | **T-01** | Linkability | Repeated ePHI prompts enable vendor systems to construct patient profiles. |
 | **T-02** | Identifiability | Combination of first name, clinic, and date allows direct patient identification. |
 | **T-03** | Disclosure | Unprotected transmission of identifiable ePHI to unauthorized third-party vendor. |
-| **T-04** | Non-Compliance | Ingestion of ePHI without a executed BAA violates HIPAA §164.514(b) and internal AUP §4.3. |
+| **T-04** | Non-Compliance | Ingestion of ePHI without an executed BAA violates HIPAA §164.514(b) and internal AUP §4.3. |
 | **T-05** | Linkability | Metadata or recurring reminder intervals expose patient care patterns. |
 | **T-06** | Identifiability | Unencrypted reminder text on external platforms reveals clinical relationships. |
 | **T-07** | Non-Repudiation | Delivery logs establish permanent evidentiary records of medical care. |
@@ -98,29 +98,29 @@ Threat scenarios mapped against the proposed architecture include:
 
 ## 4. Derived Risk Register Statements
 
-Combining vulnerabilities and mapped threat scenarios yields five core risk statements for formal scoring and prioritization:
+Combining vulnerabilities and mapped LINDDUN threat scenarios yields five core risk statements for formal scoring and prioritization:
 
 ### R-001: Public Model Training on Unsanitized ePHI
 * **Vulnerability:** V-001 (Free-tier AI assistant lacking BAA and SSO).
-* **Mapped Threats:** T-02, T-03, T-04, T-13.
+* **Mapped LINDDUN Threats:** T-02, T-03, T-04, T-13.
 * **Risk Statement:** If Marketing enters identifiable patient details into the free-tier AI assistant, ePHI will be disclosed to an unvetted vendor and ingested into public training models without statutory safeguards, causing an immediate HIPAA breach and regulatory non-compliance.
 
 ### R-002: Third-Party Data Retention & Re-identification
 * **Vulnerability:** V-002 (Vendor model training pipeline).
-* **Mapped Threats:** T-01, T-05, T-10, T-12.
+* **Mapped LINDDUN Threats:** T-01, T-05, T-10, T-12.
 * **Risk Statement:** If the vendor retains ePHI for model training, patient data across multiple appointments could be linked or inferred within vendor-controlled storage, creating permanent external data exposure beyond Northwind's governance boundary.
 
 ### R-003: Indefinite Data Persistence in Temporary Caches
 * **Vulnerability:** V-003 (Unvalidated AI caching mechanisms).
-* **Mapped Threats:** T-11, T-14.
+* **Mapped LINDDUN Threats:** T-11, T-14.
 * **Risk Statement:** If vendor local caching mechanisms lack enforced auto-deletion and access restrictions, persistent ePHI records could be exposed during a third-party vendor compromise or unauthorized system access.
 
 ### R-004: Unverified Messaging Infrastructure Governance
 * **Vulnerability:** V-004 (Delivery platform BAA uncertainty).
-* **Mapped Threats:** T-16, T-17.
+* **Mapped LINDDUN Threats:** T-16, T-17.
 * **Risk Statement:** If downstream message delivery platforms process appointment metadata without a verified BAA or adequate technical safeguards, transmission records could expose clinical relationship details to unauthorized intermediaries.
 
 ### R-005: Message Misdirection to Unintended Recipients
 * **Vulnerability:** V-005 (Unverified patient delivery destinations).
-* **Mapped Threats:** T-08, T-09, T-15.
+* **Mapped LINDDUN Threats:** T-08, T-09, T-15.
 * **Risk Statement:** If appointment notifications are transmitted to shared, outdated, or incorrect recipient destinations, private healthcare details will be disclosed to unintended third parties, generating privacy complaints and breach notification obligations.
