@@ -106,12 +106,9 @@ flowchart LR
 
 While this assessment effectively resolved the immediate policy exception request, a comprehensive post-assessment review highlights key areas to mature Northwind Health’s GRC operational posture:
 
-* **Implement Synthetic Data / De-Identification Workflows:** Rather than requiring full manual drafting, establish a standardized data sanitization policy or local script to strip mandatory HIPAA Safe Harbor identifiers (e.g., patient name and exact dates) prior to LLM processing, allowing safe tool utilization.
-* **Automate Vendor Risk Assessment (VRA) Lifecycles:** Transition from reactive, ticket-driven policy exception evaluations to an automated, centralized vendor intake process integrated with the ticketing system to catch unvetted SaaS tools before deployment.
-* **Define Granular Key Risk Indicators (KRIs):** Establish measurable security metrics—such as the number of unapproved AI egress requests blocked by Cloud Access Security Broker (CASB) or Data Loss Prevention (DLP) controls—to report proactive risk metrics to executive leadership.
+
 * **Formulate a Dedicated AI Governance Policy:** Expand the general Acceptable Use Policy (Section 4.3) into a standalone AI Governance Framework covering generative AI usage, prompt engineering boundaries, model training opt-outs, and shadow AI detection mechanisms.
 * **Formalize Quantitative Risk Analysis (FAIR Integration):** Enhance the qualitative $5 \times 5$ ISO 27005 matrix by incorporating quantitative financial loss modeling (Factor Analysis of Information Risk) to provide executive stakeholders with annualized loss expectancy (ALE) projections for regulatory breach scenarios.
-
 
 # Tools
 Markdown, Mermaid, IS0/27001, HIPAA Security Rule
