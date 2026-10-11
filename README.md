@@ -89,11 +89,11 @@ flowchart LR
 |File                    | What it shows                                            |
 |------------------------|----------------------------------------------------------|
 |01 [Scope and Context](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/01-Scope%20and%20Context.md)   |     Defines the organizational context, interested party requirements, and operational boundaries (scope) for Northwind Health’s ISO 27001-compliant Information Security Management System (ISMS).                                                     |
-|02 [Asset Register()]          |                                                          | 
-|03 [Risk Assessment Methodology]()        |                                                          |
-|04 [Data Flow and Threat Model]()       |                                                          |
-|05 Risk Identi    |                                                          |
-|06 Job Requirements Map |                                                          |
+|02 [Asset Register(https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/02-Northwinds%20Health_Asset_Register.md)]          |                                                          | 
+|03 [Risk Assessment Methodology](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/03-Risk%20Assessment%20Methodology.md)        |                                                          |
+|04 [Data Flow and Threat Model](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/04-Data%20Flow%20and%20Threat%20Model.md)       |                                                          |
+|05 [Vulnerability-to-Threat Mapping & Risk Statement Register](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/05-Vulnerability-to-Threat%20Mapping%20%26%20Risk%20Statement%20Register.md)    |                                                          |
+|06 [Risk Register and Treatment Plan](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/06-Risk%20Register%20and%20Treatment%20Plan.md) |                                                          |
 
 # Frameworks Used
 - HIPAA Security Rule: regulatory requirements for ePHI
