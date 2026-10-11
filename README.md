@@ -88,7 +88,7 @@ flowchart LR
 
 |File                    | What it shows                                            |
 |------------------------|----------------------------------------------------------|
-|01 [Scope and Context]()   |                                                          |
+|01 [Scope and Context](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/Scope%20and%20Context.md)   |                                                          |
 |02 Methodology          |                                                          | 
 |03 Risk Register        |                                                          |
 |04 Treatment Plan       |                                                          |
