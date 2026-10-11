@@ -34,9 +34,9 @@ The marketing teams exception request inclusion of the patients name strictly vi
 | Rating         | Count    | Headline |
 |----------------|----------|---------------------------------------------------------------------------------------------------------------------------|
 | 🔴Critical     | 1        | Uploading protected patient data to free AI tools causing a major compliance violation.
-| High           | 2        | Storing patient data with outside AI vendors, creating severe, permanent risks of re-identification and improper access.  |  
-| High/Medium    | 1        | Non-SSO AI accounts allow improper access and former employees to retain system entry.                                    | 
-| Medium         | 2        | Non-compliant messaging and outdated numbers cause severe privacy breaches and HIPAA fines.                               |
+| 🟠High         | 2        | Storing patient data with outside AI vendors, creating severe, permanent risks of re-identification and improper access.  |  
+| 🟡High/Medium  | 1        | Non-SSO AI accounts allow improper access and former employees to retain system entry.                                    | 
+| 🟡Medium       | 2        | Non-compliant messaging and outdated numbers cause severe privacy breaches and HIPAA fines.                               |
   
  # Architecture
 
