@@ -40,15 +40,26 @@ Remediation of the critical gap requires **zero additional capital expenditure**
 
 ## 3. Recommended Remediation Roadmap
 
-flowchart TD
-    A["<b>30-Day Actions (Immediate)</b><br/>• Deny policy exception for free-tier AI assistant (A005)<br/>• Issue updated AI Acceptable Use Policy (AUP)<br/>• Verify BAA & security controls for messaging platform (A009)"]
-    
-    B["<b>90-Day Actions (Medium-Term)</b><br/>• Procure Enterprise AI licenses (A008) ($120/mo total)<br/>• Enforce SAML 2.0 / SSO & mandatory MFA via IdP<br/>• Configure automated 24-hr cache purging & zero-retention headers"]
-    
-    C["<b>180-Day Actions (Strategic)</b><br/>• Deploy CASB / DLP rules to detect and block shadow AI<br/>• Automate Vendor Risk Assessment (VRA) intake workflows<br/>• Conduct ISO 27001 ISMS Management Review & SOC 2 prep"]
+| Timeframe | Key Actions | Strategic Objective |
+| :--- | :--- | :--- |
+| **30-Day Actions** *(Immediate)* | • Formally deny policy exception for free-tier AI assistant (A005).<br>• Issue updated AI Acceptable Use Policy (AUP) to Marketing and staff.<br>• Execute BAA and security verification for downstream messaging platform (A009). | Eliminate immediate HIPAA breach exposure and address active compliance gaps. |
+| **90-Day Actions** *(Medium-Term)* | • Procure Enterprise AI licenses (A008) at $30/user/month ($120/month total).<br>• Enforce SAML 2.0 / SSO integration and mandatory MFA via corporate IdP.<br>• Configure automated 24-hour cache purging and zero-data-retention API headers. | Establish enterprise identity governance and technical data retention controls. |
+| **180-Day Actions** *(Strategic)* | • Deploy Cloud Access Security Broker (CASB) / DLP rules to block shadow AI.<br>• Establish automated Vendor Risk Assessment (VRA) intake workflows.<br>• Conduct annual ISO 27001 ISMS Management Review and SOC 2 Type II readiness. | Embed automated technical safeguards and maintain continuous audit readiness. |
 
-    A --> B
-    B --> C
+---
 
-    classDef stage fill:#f8fafc,stroke:#475569,stroke-width:1.5px,color:#0f172a;
-    class A,B,C stage;
+## 4. Key Decisions Required from Leadership
+
+1. **Formal Rejection of Policy Exception:** Approve the formal denial of the policy exception request for the free-tier AI writing assistant to eliminate immediate HIPAA breach liability.
+2. **Budget Authorization for Enterprise Tier:** Authorize an operational expenditure of **$120.00/month** ($30/user/month across 4 Marketing staff) to transition to the Enterprise AI Tier (A008), providing a fully compliant, BAA-covered, and SSO-integrated solution.
+3. **Endorsement of AI Governance Policy:** Approve the publication of the standalone AI Governance Policy enforcing zero-data-retention requirements across all departmental software procurement.
+
+---
+
+## 5. Post-Remediation Target State
+
+Upon execution of the 30-day and 90-day recommended actions:
+
+* **Residual Risk Reduction:** Critical Risk **R-001** decreases from **25 (Critical)** to **2 (Low)**; High Risks **R-002 through R-004** fall to **Medium/Low**.
+* **Compliance Alignment:** Fully aligns Northwind Health with ISO/IEC 27001:2022 Controls A.5.19, A.5.20, A.8.10, and HIPAA Security Rule § 164.308.
+* **Audit Readiness:** Satisfies prerequisite vendor management and access control criteria for upcoming SOC 2 Type II audit certifications required by enterprise clinic clients.
