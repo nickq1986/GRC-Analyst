@@ -1,9 +1,3 @@
-# Document Reference: ISMS-DOC-08-JRM
-**Classification:** Public / Portfolio Artifact  
-**Version:** 1.0  
-**Status:** Approved  
-**Owner:** Information Security & Compliance  
-**Framework Alignment:** ISO/IEC 27001:2022, ISO/IEC 27005, HIPAA Security Rule, LINDDUN  
 
 ---
 
