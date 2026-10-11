@@ -1,11 +1,11 @@
 # GRC-Analyst
 A fictional GRC case study assessing an AI policy exception request involving patient data at a healthcare SaaS company. It demonstrates evaluating ePHI classification, risk scoring, compliance decisions, and drafting clear stakeholder communication in a regulated environment.
 
-# Scenario
+# Overview
 
 𝐍𝐨𝐫𝐭𝐡𝐰𝐢𝐧𝐝 𝐇𝐞𝐚𝐥𝐭𝐡, a 120-person US healthcare SaaS company that stores patient data (ePHI) for around 400 clinics.
 
-𝐓𝐢𝐜𝐤𝐞𝐭 𝐟𝐫𝐨𝐦 𝐲𝐨𝐮𝐫 𝐦𝐚𝐧𝐚𝐠𝐞𝐫:
+## 𝐓𝐢𝐜𝐤𝐞𝐭 𝐟𝐫𝐨𝐦 𝐲𝐨𝐮𝐫 𝐦𝐚𝐧𝐚𝐠𝐞𝐫:
 
 > "Marketing want an exception to our AI policy. Can you assess it and recommend a decision? Please draft the reply to the Head of Marketing too."
 𝐓𝐡𝐞 𝐫𝐞𝐪𝐮𝐞𝐬𝐭 (𝐟𝐫𝐨𝐦 𝐭𝐡𝐞 𝐇𝐞𝐚𝐝 𝐨𝐟 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠)
@@ -36,10 +36,9 @@ The marketing teams exception request inclusion of the patients name strictly vi
 | **R-001** | Risk of leaking patient data and breaking privacy laws because Marketing uses free AI tools with real patient details. | Data Security | 5 | 5 | **25** 🔴 | **Control:** A.5.8 (Information security in project management) & A.5.10<br><br>Ban free-tier AI tools. Require staff to use only enterprise-licensed AI software with strict data protection terms and signed privacy agreements. |
 | **R-002** | Risk of patients being identified because outside AI vendors keep and use patient data to train their systems. | Data Security | 4 | 4 | **16** 🟠 | **Control:** A.5.19 (Information security in supplier relationships) & A.5.20 (Addressing information security within supplier agreements)<br><br>Mandate legal contracts with AI suppliers prohibiting the retention or use of organisational data for model training, with strict requirements to delete data post-processing. |
 | **R-003** | Risk of patient data lingering indefinitely or being accessed improperly due to weak storage and deletion controls in AI software. | Compliance | 4 | 4 | **16** 🟠 | **Control:** A.8.10 (Information deletion) & A.8.12 (Data leakage prevention)<br><br>Configure automatic data deletion and purging rules within AI software to ensure temporary caches and logs are permanently erased after processing. |
-| **R-004** | Risk of unauthorised access and former employees keeping system access because AI accounts do not use company login controls (SSO). | Access Control | 3 | 4 | **12** 🟡 | **Control:** A.5.15 (Access control), A.5.18 (Access rights), & A.8.5 (Secure authentication)<br><br>Enforce Enterprise Single Sign-On (SSO) with Multi-Factor Authentication (MFA) so user access is centrally managed and immediately revoked upon offboarding. |
 
   
- **Architecture**
+ # Architecture
 
 ```mermaid
 flowchart LR
@@ -130,61 +129,5 @@ flowchart LR
 
 **Justification** Using messaging software without a signed healthcare contract (BAA) violates federal privacy laws (HIPAA), exposing the organization to legal fines during audits.
 
-]
-
-3. [
-# Approve with Conditions 
-
-## Condition 1: Mitigate R-001 and R-002 ##
-
-_Controls_: ISO 27001 A.5.10, A.5.20 
-
-Immediately cease all use of free-tier AI tools. Marketing must use an approved enterprise-licensed AI platform with explicit contractual guarantees prohibiting vendor retention or training on organization data.
-
-## Condition 2: Mitigate R-003
-
-_Controls_: ISO 27001 A.8.10
-
-Enable automated data retention policies within the AI software to ensure temporary caches, logs, and stored prompts are purged immediately after processing ().
-
-## Condition 4: Mitigate R-004
-
-_Controls_: ISO 27001 A.5.15, A.5.18
-
-Intercept and route all AI software user authentication through Enterprise Single Sign-On (SSO) with Multi-Factor Authentication (MFA) to ensure central control and automated access revocation upon employee offboarding.
-
-## Condition 5: Mitigate R-005 
-
-_Controls_: ISO 27001 A.8.11
-
-Strip specific medical/treatment details from outbound automated messages (e.g., send generic appointment reminders requiring a secure login to view details) to prevent disclosure via shared or outdated contact numbers.
-
-## Condition 6: Mitigate R-006
-
-_Controls_; ISO 27001 A.8.11
-
-Strip specific medical/treatment details from outbound automated messages (e.g., send generic appointment reminders requiring a secure login to view details) to prevent disclosure via shared or outdated contact numbers .
-
-4.[
-
-Decision: Approved with Conditions
-
-Hi,
-
-We have completed the risk assessment for the proposed AI tools and messaging workflows. Rather than blocking these initiatives, we want to help Marketing move forward quickly and safely.
-
-To protect patient privacy, comply with healthcare regulations, and safeguard company systems, we need to put five practical guardrails in place before rollout:
-
-Switch to Enterprise AI: Free AI tools use real patient data for their own learning. We will set you up on an enterprise-licensed tool where data stays strictly private.
-
-Centralized Logins (SSO): Access will be routed through standard company logins so IT can secure accounts and manage access automatically.
-
-Automatic Data Wiping: We will configure the system to clear temporary data and search histories automatically.
-
-Sign Vendor Contracts: Our legal team must execute required healthcare privacy contracts (BAAs) with all messaging vendors before sending live messages.
-
-Generic Notifications: Message content will be kept general (e.g., "You have a new appointment reminder") to prevent sensitive medical details from showing up on shared household devices.
-
-Our team is ready to partner with you to get these safeguards configured so you can launch securely. Let’s schedule a quick kickoff next week.
 ]
 
