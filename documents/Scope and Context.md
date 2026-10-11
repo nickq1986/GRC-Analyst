@@ -103,3 +103,55 @@ Let me know which option you'd like to pursue, and I'll help you set it up!
 
 Best regards,  
 **GRC Analyst** | Northwind Health
+
+---
+
+## System Architecture & Data Flow
+
+```mermaid
+flowchart LR
+    subgraph NW ["Northwind Health Trust Boundary (120 staff; ePHI for ~400 clinics)"]
+        DB[("Patient Database<br/>(ePHI Source)")]
+        SSO["Identity Provider<br/>(SSO)"]
+        M["Marketing Team<br/>(4 Staff)"]
+        RD["Appointment Reminder Delivery<br/>(Platform / Channel)"]
+    end
+
+    subgraph EXT ["Current Request: Third-Party Free Tier (REJECTED)"]
+        AI["AI Writing Assistant<br/>(Unmanaged Account / No SSO)<br/>No BAA<br/>Prompt: Name, Type, Clinic, Date"]
+        V[("Vendor Data Store<br/>(Inputs Train Public Models)")]
+    end
+
+    subgraph ALT ["Approved Solution: Enterprise Tier or Static Templates"]
+        EAI["Enterprise AI Tier / Template Engine<br/>BAA Active | Zero Training<br/>SSO Enforced | Audit Logs<br/>($120/mo for 4 staff)"]
+    end
+
+    P(("Patient"))
+
+    %% Data Flow
+    SSO -->|"SSO Authentication"| M
+    DB -->|"Patient Details"| M
+    M -.->|"ePHI Transmission (High Risk)"| AI
+    AI == "Public Model Training" ==> V
+    M -->|"Approved Template Generation"| EAI
+    EAI -->|"Sanitized Draft"| M
+    M -->|"Reminder Sent"| RD
+    RD -->|"Reminder Delivered"| P
+
+    %% Styling
+    classDef boundary fill:#f0f4f9,stroke:#3b82f6,stroke-width:2px,color:#0f172a;
+    classDef extBoundary fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#0f172a;
+    classDef internal fill:#ffffff,stroke:#64748b,stroke-width:1.5px,color:#0f172a;
+    classDef external fill:#fff1f2,stroke:#e11d48,stroke-width:2px,color:#0f172a;
+    classDef risk fill:#fef2f2,stroke:#dc2626,stroke-width:3px,color:#7f1d1d;
+    classDef optional fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    classDef patient fill:#faf5ff,stroke:#7c3aed,stroke-width:1.5px,color:#2e1065;
+
+    class NW boundary;
+    class EXT extBoundary;
+    class ALT optional;
+    class M,SSO,DB,RD internal;
+    class AI external;
+    class V risk;
+    class EAI optional;
+    class P patient;
