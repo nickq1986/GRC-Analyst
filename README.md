@@ -89,45 +89,9 @@ flowchart LR
 
     linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
 ```
-2. [
 
-## Risk Rating and Justification 
-  
-**R-001** – Risk of leaking patient data and breaking privacy laws because Marketing uses free AI tools with real patient details.
 
-**Rating** 25/25 
 
-**Justification** Free AI tools use public inputs to train their models. Uploading real patient data creates an instant HIPAA breach, regulatory fines, and public exposure.
-
-**R-002** – Risk of patients being identified because outside AI vendors keep and use patient data to train their systems.
-
-**Rating** 16/25
-
-**Justification** Vendors keeping data for training means patient details are permanently stored outside our control, creating a risk of patients being re-identified.
-
-**R-003** – Risk of patient data lingering indefinitely or being accessed improperly due to weak storage and deletion controls in AI software.
-
-**Rating** 16/25
-
-**Justification** Without strict auto-delete rules, sensitive data stays in temporary AI storage indefinitely, creating an unmonitored target for data leaks.
-
-**R-004** – Risk of unauthorized access and former employees keeping system access because AI accounts do not use company login controls (SSO).
-
-**Rating** 12/25 Medium/High
-
-**Justification** Personal logins mean IT cannot enforce strong password policies. When employees leave the company, their access cannot be automatically blocked, creating a back-door security risk.
-
-**R-005** – Risk of patient medical details reaching the wrong person due to outdated, shared, or unverified contact information.
-
-**Rating** 9/25 Medium
-
-**Justification** Sending messages to shared family phones or outdated numbers accidentally exposes private medical appointments to unintended recipients, leading to privacy complaints.
-
-**R-006** –  Risk of privacy breaches and legal penalties because messaging tools lack required vendor contracts (BAAs) and security controls.
-
-**Score** 8/25 Medium
-
-**Justification** Using messaging software without a signed healthcare contract (BAA) violates federal privacy laws (HIPAA), exposing the organization to legal fines during audits.
 
 ]
 
