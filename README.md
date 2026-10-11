@@ -100,7 +100,7 @@ flowchart LR
 |04 [Data Flow and Threat Model](https://github.com/nickq1986/GRC-Analyst/blob/main/documents/04-Data%20Flow%20and%20Threat%20Model.md)       |   Maps data flows across trust boundaries and systematically identifies LINDDUN privacy threats to highlight system vulnerabilities before risk scoring.                                                       |
 |05 [Vulnerability-to-Threat Mapping & Risk Statement Register](https://github.com/nickq1986/GRC-Analyst/blob/main/documents/05-Vulnerability-to-Threat%20Mapping%20%26%20Risk%20Statement%20Register.md)    |                Aggregates granular threats against specific asset vulnerabilities to construct structured risk statements for downstream scoring.                                          |
 |06 [Risk Register and Treatment Plan](https://github.com/nickq1986/GRC-Analyst/blob/main/documents/06-Risk%20Register%20and%20Treatment%20Plan.md) |                                                          Evaluates pre-mitigation risk severity using likelihood and impact scoring, assigning control owners, ISO 27002 mitigation measures, and operational remediation timelines.|
-|07 [Executive Summary(https://github.com/nickq1986/GRC-Analyst/blob/main/documents/07-Executive%20Summary.md)] | a brief overview that highlights key findings and decisions for quick leadership action. |
+|07 [Executive Summary](https://github.com/nickq1986/GRC-Analyst/blob/main/documents/07-Executive%20Summary.md) | a brief overview that highlights key findings and decisions for quick leadership action. |
 
 # Frameworks Used
 - HIPAA Security Rule: regulatory requirements for ePHI
