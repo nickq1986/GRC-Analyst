@@ -96,9 +96,9 @@ flowchart LR
 |06 Job Requirements Map |                                                          |
 
 # Frameworks Used
--HIPAA Security Rule: regulatory requirements for ePHI
--ISO/IEC 27001 For Risk Assessment Process
--ISO/IEC 27002 For control mapping 
+- HIPAA Security Rule: regulatory requirements for ePHI
+- ISO/IEC 27001 For Risk Assessment Process
+- ISO/IEC 27002 For control mapping
 
 # What I would Improve 
 
