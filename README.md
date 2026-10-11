@@ -15,7 +15,7 @@ A fictional GRC case study assessing an AI policy exception request involving pa
 
 > 𝐀𝐜𝐜𝐞𝐩𝐭𝐚𝐛𝐥𝐞 𝐔𝐬𝐞 𝐏𝐨𝐥𝐢𝐜𝐲, 𝟒.𝟑: ePHI must not be entered into any system that has not been approved by Security and covered by a Business Associate Agreement (BAA) where required.
 
-##What there is to Know about the tool##
+**What there is to Know about the tool**
 - The free tier's terms allow user inputs to be used to improve the vendor's models
 - No BAA is available on the free tier
 - An enterprise tier exists at $30 per user per month: it includes a BAA, no training on customer data, SSO, and audit logs
@@ -26,11 +26,9 @@ A fictional GRC case study assessing an AI policy exception request involving pa
 
 # Findings 
  
-Path: [GRC]
 
-## Deliverable 1 Determination of ePHI 
 
-1. [The combination of patient's first name, appointment type, clinic, and date is ePHI. Sections 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers. The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).]
+The combination of patient's first name, appointment type, clinic, and date is ePHI. Sections 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers. The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).
 
   
  **Architecture**
