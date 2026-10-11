@@ -23,7 +23,7 @@ As a GRC Analyst, I have received ticker from the line manager:
 
 The combination of patient's first name, appointment type, clinic, and date is ePHI. Sections 164.514(b) of the HIPPA privacy rule, otherwise known as the "Safe Harbour" method for de-identification mandates the removal of 18 types of identifiers. The marketing teams exception request inclusion of the patients name strictly violates identifier number 1 (Names) and the inclusion of patients appointment date strictly violates identifier 3 (All elements of dates) of the 18 identifiers laid out by Sections 164.514(b).
 
-# Why I built this: risk assessments and risk registers appear in almost every entry-level GRC job description I reviewed. I wanted proof that I can run one end to end, not just describe it. See how this project maps to real job requirements.  See [how this project maps to real job requirements]().
+**Why I built this:** After reviewing dozens of GRC job descriptions, risk assessments and risk registers were always at the top of the list. I wanted to go beyond resume keywords and show hiring managers audit-ready work that reflects day-one readiness.  See [how this project maps to real job requirements]().
 
 # Key Findings 
  
