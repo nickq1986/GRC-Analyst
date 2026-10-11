@@ -88,7 +88,7 @@ flowchart LR
 
 |File                    | What it shows                                            |
 |------------------------|----------------------------------------------------------|
-|01 [Scope and Context](https://github.com/nickq1986/GRC-Analyst/blob/refine/documents/01-Scope%20and%20Context.md)   |                                                          |
+|01 [Scope and Context]()   |     Defines the organizational context, interested party requirements, and operational boundaries (scope) for Northwind Health’s ISO 27001-compliant Information Security Management System (ISMS).                                                     |
 |02 Methodology          |                                                          | 
 |03 Risk Register        |                                                          |
 |04 Treatment Plan       |                                                          |
