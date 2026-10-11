@@ -100,9 +100,15 @@ flowchart LR
 - ISO/IEC 27001 For Risk Assessment Process
 - ISO/IEC 27002 For control mapping
 
+  # What I learned
+
+- Formal Threat Mapping Clarifies Risk: Using LINDDUN to map specific threats against asset vulnerabilities prevented overlap and created distinct, actionable risk statements.
+
+-Compliance Expectations Shape Severity: The presence of ePHI under HIPAA transformed what would be a minor shadow IT concern into a critical regulatory non-compliance issue.
+
+
 # What I would Improve 
 
-## What I Would Improve
 
 While this assessment effectively resolved the immediate policy exception request, a comprehensive post-assessment review highlights key areas to mature Northwind Health’s GRC operational posture:
 
