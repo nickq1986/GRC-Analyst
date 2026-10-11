@@ -87,7 +87,7 @@ flowchart LR
 
     linkStyle 2,3 stroke:#dc2626,stroke-width:3px;
 ```
-#Project Structure
+# Project Structure
 
 |File                    | What it shows                                            |
 |------------------------|----------------------------------------------------------|
@@ -97,4 +97,16 @@ flowchart LR
 |04 Treatment Plan       |                                                          |
 |05 Executive Summary    |                                                          |
 |06 Job Requirements Map |                                                          |
+
+# Frameworks Used
+-HIPAA Security Rule: regulatory requirements for ePHI
+-ISO/IEC 27001 For Risk Assessment Process
+-ISO/IEC 27002 For control mapping 
+
+# What I would Improve 
+
+
+
+# Tools
+Markdown, Mermaid, IS0/27001, HIPAA Security Rule
 
