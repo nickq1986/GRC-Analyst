@@ -1,51 +1,99 @@
-# 01 · Context of the Organization & ISMS Scope (ISO/IEC 27001)
+# GRC Case Study: AI Policy Exception Risk Assessment
 
-## 1. Context of the Organization (Clause 4.1 & 4.2)
-
-### 1.1 Organizational Profile
-* **Organization:** Northwind Health, Inc.
-* **Industry:** Healthcare Software-as-a-Service (SaaS)
-* **Primary Business Function:** Patient scheduling and automated appointment reminders.
-* **Scale & Operations:** ~120 personnel (remote-first operational model; HQ in Austin, TX, USA).
-* **Target Operating Environment:** Serves ~400 outpatient healthcare clinics across the United States.
-* **Information Assets Held:** Protected Health Information (ePHI) for ~1.2 million data subjects, encompassing personally identifiable identifiers, contact attributes, appointment dates, insurance metadata, and clinical visit rationales.
-* **Regulatory & Contractual Role:** Business Associate (BA) under HIPAA regulations to its clinic clients (Covered Entities).
-
-### 1.2 Drivers for Risk Assessment
-* **Regulatory Compliance:** Mandated compliance with HIPAA Security Rule requirements (§164.308(a)(1)(ii)(A)–(B)) for periodic risk analysis and management.
-* **Contractual Requirements:** SOC 2 Type II attestation is a mandatory prerequisite for contract renewals across three enterprise customer accounts.
-* **Governance & Oversight:** Provision of executive-level risk visibility to the Board of Directors to justify security controls investment and resource allocation.
+A Governance, Risk, and Compliance (GRC) assessment of an AI policy exception request involving Electronic Protected Health Information (ePHI) at a healthcare SaaS company. This case study evaluates ePHI classification under HIPAA, conducts a comprehensive risk assessment mapped to ISO/IEC 27001/27002 controls, determines a compliance decision, and drafts stakeholder communication.
 
 ---
 
-## 2. Scope of the Information Security Management System (Clause 4.3)
+## 📋 Executive Overview
 
-The boundaries and applicability of the Information Security Management System (ISMS) are formally defined as follows:
+* **Organization:** Northwind Health, Inc. (120 employees, remote-first, HQ in Austin, TX)
+* **Industry & Role:** Healthcare SaaS / Business Associate serving ~400 outpatient clinics (~1.2M patient records)
+* **Role:** GRC Analyst
+* **Task:** Evaluate an exception request from the Head of Marketing to use a free third-party AI tool for personalizing appointment reminder messages.
 
-### 2.1 In-Scope Boundaries
-* **Production Platforms:** Cloud-native patient scheduling application (Web and Mobile interfaces).
-* **Infrastructure & Hosting:** AWS Production Environment, including database clusters and document repositories processing or hosting ePHI.
-* **Identity & Endpoint Governance:** Corporate Identity Provider (IdP / Single Sign-On), corporate email, Google Workspace, and managed workforce endpoints.
-* **Third-Party Ecosystem:** External vendors and sub-processors processing, storing, or transmitting ePHI.
+### The Exception Request
+> *"We'd like to use a free AI writing assistant to personalise appointment reminder messages. The team would paste in the patient's first name, appointment type, clinic, and date. It would save us around 10 hours a week. Can we get an exception?"*
 
-### 2.2 Out-of-Scope Boundaries
-* Public-facing marketing website (isolated from ePHI environments).
-* Internal corporate Finance and Human Resources information systems (governed under separate operational controls).
-* Physical security of client clinic facilities.
+### Policy Mandate (Acceptable Use Policy, §4.3)
+> *"ePHI must not be entered into any system that has not been approved by Security and covered by a Business Associate Agreement (BAA) where required."*
 
 ---
 
-## 3. Assumptions, Constraints & Stakeholder Engagement (Clause 4.4)
+## 🛠️ Tool Comparison & Profile
 
-### 3.1 Assessment Boundaries & Constraints
-* **Assessment Methodology:** Evaluated via document review, architectural configuration analysis, and simulated stakeholder interviews.
-* **Temporal Boundary:** Point-in-time risk posture evaluation effective September 2026.
-* **Technical Validation:** Excludes dynamic penetration testing; technical risk findings are derived from system and access configuration audits.
+| Feature | Free Tier (Requested) | Enterprise Tier (Available) |
+| :--- | :--- | :--- |
+| **Data Training** | Public training enabled on inputs | Excluded from model training |
+| **Contractual Protection** | **No BAA Available** | **BAA Provided** |
+| **Access Control** | Personal accounts (No SSO) | Identity Provider / SSO Integration |
+| **Auditability** | None | Full audit & activity logging |
+| **Cost** | $0 | $30 / user / month ($120/mo for 4 staff) |
 
-### 3.2 Key Stakeholders Consulted
-| Stakeholder Role | Domain of Responsibility |
-| :--- | :--- |
-| **Chief Technology Officer (CTO)** | Cloud Infrastructure, Platform Architecture, Engineering Controls |
-| **IT Manager** | Endpoint Security, Identity & Access Management (IAM), User Lifecycle |
-| **Compliance Manager** | Regulatory Alignment (HIPAA), Third-Party / Vendor Risk Management |
-| **Customer Success Lead** | Client Data Processing Requests, Shadow IT / Tooling Usage |
+---
+
+## 🎯 Deliverables & Key Findings
+
+### Deliverable 1: Determination of ePHI
+**Result: YES.** 
+
+The dataset proposed for processing (Patient First Name + Appointment Type + Clinic + Date) constitutes **Electronic Protected Health Information (ePHI)** under 45 CFR §160.103. 
+
+Under HIPAA §164.514(b) (Safe Harbor Method for De-Identification), data is only considered de-identified if 18 specific categories of identifiers are removed. The proposed workflow explicitly violates:
+1. **Identifier #1 (Names):** Patient's first name.
+2. **Identifier #3 (Dates):** Appointment date (all elements of dates except year are restricted).
+
+Combining these identifiers with clinical data (clinic name and appointment type) allows direct re-identification of an individual's health status and healthcare schedule.
+
+---
+
+### Deliverable 2: Risk Scoring Matrix
+
+Risk scores are calculated using **Likelihood (1–5) × Impact (1–5) = Risk Rating (1–25)**.
+
+| Risk ID | Risk Scenario | Likelihood | Impact | Rating | Classification | Justification |
+| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
+| **R-001** | **Public Model Training on ePHI** | 5 | 5 | **25** | 🔴 Critical | Inputs on the free tier are used for public model training, creating an instantaneous, unmitigated HIPAA breach and regulatory exposure. |
+| **R-002** | **Data Retention & Re-identification** | 4 | 4 | **16** | 🟠 High | Vendor retention of data outside Northwind's control creates permanent third-party exposure and re-identification risks. |
+| **R-003** | **Indefinite Data Lingering** | 4 | 4 | **16** | 🟠 High | Lack of enforced retention/deletion schedules allows sensitive data to reside in unmonitored temporary storage indefinitely. |
+| **R-004** | **Unmanaged Account Access (No SSO)** | 4 | 3 | **12** | 🟡 High/Med | Absence of SSO prevents centralized identity lifecycle management, allowing former employees to retain access post-offboarding. |
+| **R-005** | **Outdated Contact Misdirection** | 3 | 3 | **9** | 🟡 Medium | Inaccurate or shared contact details risk exposing appointment details to unintended recipients during delivery. |
+| **R-006** | **Lack of Business Associate Agreement** | 4 | 2 | **8** | 🟡 Medium | Transmitting ePHI without a executed BAA directly violates HIPAA Security & Privacy Rules, exposing the firm to statutory fines. |
+
+#### Summary Breakdown
+| Severity | Count | Primary Issue |
+| :--- | :---: | :--- |
+| 🔴 **Critical** | 1 | Direct statutory violation and public model ingestion of ePHI |
+| 🟠 **High** | 2 | Third-party retention, re-identification, and lingering data risks |
+| 🟡 **Medium / High**| 3 | Access governance deficiencies, missing BAAs, and contact error risks |
+
+---
+
+### Deliverable 3: Governance Decision
+
+**Decision: DENIED as written | APPROVED WITH CONDITIONS (Option B)**
+
+* **Denied:** The free tier cannot be approved under any circumstances due to non-negotiable HIPAA regulatory non-compliance and Acceptable Use Policy §4.3 violations.
+* **Approved with Conditions (Enterprise Tier):** Marketing may utilize the tool *only* upon upgrading to the Enterprise Tier ($120/month total), subject to the following mandatory controls:
+  1. **Execute BAA:** A signed Business Associate Agreement must be finalized with the vendor.
+  2. **Enable SSO & Audit Logging:** Enforce Single Sign-On via Northwind's Identity Provider and enable central logging.
+  3. **Zero-Training Verification:** Confirm vendor data-use controls opt out of model training.
+  4. **Zero-ePHI Prompt Structure (Preferred Mitigation):** Transition templates to anonymous placeholders.
+
+---
+
+### Deliverable 4: Stakeholder Communication
+
+**To:** Head of Marketing  
+**From:** GRC Analyst  
+**Subject:** Response: AI Policy Exception Request – Appointment Reminders  
+
+Hi [Name],
+
+Thank you for reaching out. We evaluated your request to use the free AI writing assistant for personalized appointment reminders. 
+
+**Decision:** We cannot approve the **free tier** of this tool. Because it retains data to train public models and lacks a Business Associate Agreement (BAA), entering patient names and appointment dates creates an immediate HIPAA violation and regulatory fine risk.
+
+**How We Move Forward Together:**
+We want to help you save those 10 hours a week safely. Here are two approved paths forward:
+
+1. **Zero-ePHI Templates (Free & Immediate):** Use static variables/placeholders in the AI prompt (e.g., *"Write a warm
